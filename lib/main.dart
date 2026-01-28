@@ -16,6 +16,7 @@ class AccessoriesStore extends StatelessWidget {
         ),
       ),
     );
+    
   }
 }
 
