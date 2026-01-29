@@ -1,13 +1,9 @@
 class EndPoint {
-  static String baseUrl = "https://api-coffee.ebdaa-business.com/api/";
-  static String createUser = "auth/user/register";
-  static String verifyEmail = "auth/user/verifyEmail";
-  static String login = "auth/user/login";
-  static String loginAdmin = "auth/admin/login";
-  static String signUp = "user/signup";
-  static String getUserDataEndPoint(id) {
-    return "user/get-user/$id";
-  }
+  static String baseUrl = "https://accessories-eshop.runasp.net/";
+  static String createUser = "api/auth/register";
+  static String verifyEmail = "api/auth/verify-email​";
+  static String login = "api/auth/login";
+  static String refreshToken = "api/auth/refresh-token​";
 }
 
 class ApiKey {
