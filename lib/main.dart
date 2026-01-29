@@ -15,8 +15,7 @@ class AccessoriesStore extends StatelessWidget {
           child: Text('Welcome to the Accessories Store!'),
         ),
       ),
-    );
-    
+    );  
   }
 }
 
