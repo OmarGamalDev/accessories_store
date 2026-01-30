@@ -1,3 +1,4 @@
+import 'package:accessories_store/core/shared_widgets/app_snack_bar_example.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,12 +11,8 @@ class AccessoriesStore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Scaffold(
-        body: Center(
-          child: Text('Welcome to the Accessories Store!'),
-        ),
-      ),
-    );  
+      home: const AppSnackBarExample(),
+    );
   }
 }
 
