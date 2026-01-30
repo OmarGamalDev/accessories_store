@@ -1,3 +1,5 @@
+import 'package:accessories_store/core/network/api_constants.dart';
+
 class ErrorModel {
   final int statusCode;
   final String errorMessage;
@@ -6,8 +8,8 @@ class ErrorModel {
 
   factory ErrorModel.fromJson(Map<String, dynamic> jsonData) {
     return ErrorModel(
-      statusCode: jsonData["statusCode"],
-      errorMessage: jsonData["message"],
+      statusCode: jsonData[ApiKey.statusCode],
+      errorMessage: jsonData[ApiKey.errorMessage],
     );
   }
 }
