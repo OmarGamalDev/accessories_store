@@ -7,7 +7,8 @@ class EndPoint {
 }
 
 class ApiKey {
-  static String errorMessage = "detail";
+  static String statusCode = "statusCode";
+  static String errorMessage = "errorMessage";
   static String fullName = "fullname";
   static String email = "email";
   static String username = "username";
@@ -15,7 +16,6 @@ class ApiKey {
   static String password = "password";
   static String image = "image";
   static String token = "token";
-  static String message = "message";
   static String id = "id";
   static String name = "name";
   static String confirmPassword = "confirmPassword";

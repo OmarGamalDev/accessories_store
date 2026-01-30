@@ -10,12 +10,8 @@ class AccessoriesStore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Scaffold(
-        body: Center(
-          child: Text('Welcome to the Accessories Store!'),
-        ),
-      ),
-    );  
+      home: const Scaffold(),
+    );
   }
 }
 
