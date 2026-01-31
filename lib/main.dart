@@ -1,3 +1,4 @@
+import 'package:accessories_store/Features/splash/presentation/view/splash_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +11,8 @@ class AccessoriesStore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Scaffold(),
+      debugShowCheckedModeBanner: false,
+      home: const SplashView(),
     );
   }
 }
