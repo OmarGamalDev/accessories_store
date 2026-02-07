@@ -1,4 +1,5 @@
 {
+  "appName" : "AccessoriesStore",
   "email": "Email",
   "password": "Password",
   "login": "Login",
@@ -116,5 +117,10 @@
   "review2": "Reviews",
   "addRate": "How do you rate this product",
   "addRate2": "Thanks for rating",
-  "addRate3": "Your comments"
+  "addRate3": "Your comments",
+  "success": "Success!",
+  "error": "Error!",
+  "warning": "Warning!",
+  "info": "Info!",
+  "reload": "Reload"
 }
