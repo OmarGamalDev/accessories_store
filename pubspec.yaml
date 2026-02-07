@@ -35,6 +35,19 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_launcher_icons: ^0.14.4
+  google_fonts: ^8.0.0
+  flutter_screenutil: ^5.9.3
+  go_router: ^17.0.1
+  equatable: ^2.0.8
+  flutter_svg: ^2.2.3
+  lottie: ^3.3.2
+  cached_network_image: ^3.4.1
+  get_it: ^9.2.0
+  flutter_bloc: ^9.1.1
+  easy_localization: ^3.0.8
+  awesome_snackbar_content: ^0.1.8
+  animated_snack_bar: ^0.4.0
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +75,8 @@ flutter:
   assets:
     - assets/images/
     - assets/translations/
+    - assets/svg/
+    - assets/lotties/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

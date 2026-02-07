@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 
-import '../utilities/app_colors.dart';
+import '../utilies/app_colors.dart';
 
 class CustomShimmerContainerWidget extends StatelessWidget {
   const CustomShimmerContainerWidget({super.key, required this.height, required this.width, required this.radius});
@@ -10,12 +11,16 @@ class CustomShimmerContainerWidget extends StatelessWidget {
   final double radius;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width.w,
-      height: height.h,
-      decoration: BoxDecoration(
-        color: AppColors.greyColor.withOpacity(0.4),
-        borderRadius: BorderRadius.circular(radius.r),
+    return Shimmer.fromColors(
+      baseColor: AppColors.greyColor.withOpacity(0.4),
+      highlightColor: Colors.white,
+      child: Container(
+        width: width.w,
+        height: height.h,
+        decoration: BoxDecoration(
+          color: AppColors.greyColor.withOpacity(0.4),
+          borderRadius: BorderRadius.circular(radius.r),
+        ),
       ),
     );
   }
