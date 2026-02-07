@@ -1,4 +1,5 @@
 {
+  "appName" : "AccessoriesStore",
   "email": "Email",
   "password": "Password",
   "login": "Login",
