@@ -1,6 +1,10 @@
+import 'package:accessories_store/core/routes/app_routes.dart';
+import 'package:accessories_store/core/services/cache/cache_helper.dart';
 import 'package:accessories_store/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -70,31 +74,43 @@ class _SplashViewBodyState extends State<SplashViewBody>
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Image.asset(
-                Assets.imagesAccessoriesStoreLogo,
-                width: 300,
-                height: 300,
-                colorBlendMode: BlendMode.srcIn,
+                Assets.imagesPngAccessoriesStoreLogo,
+                width: 300.w,
+                height: 300.h,
               ),
             ),
           ),
         ),
+
+        // Bottom decoration
         Positioned(
           bottom: 0,
           left: 0,
           right: 0,
-          child: SvgPicture.asset(Assets.imagesCircles),
+          child: SvgPicture.asset(
+            Assets.imagesSvgCircles,
+            fit: BoxFit.fitWidth,
+          ),
         ),
       ],
     );
   }
 
   void executeNavigation() {
-    Future.delayed(const Duration(milliseconds: 2500), () async {
+    Future.delayed(const Duration(milliseconds: 2500), () {
       if (!mounted) return;
-      // Navigator.pushReplacement(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => const Scaffold()),
-      // );
+      final bool isOnBoardingCompleted = CacheHelper.isOnBoardingCompleted;
+      if (isOnBoardingCompleted) {
+        final bool isLoggedIn = CacheHelper.isLoggedIn;
+
+        if (isLoggedIn) {
+          GoRouter.of(context).pushReplacement(AppRoutes.homeScreen);
+        } else {
+          GoRouter.of(context).pushReplacement(AppRoutes.loginScreen);
+        }
+      } else {
+        GoRouter.of(context).pushReplacement(AppRoutes.onboardingScreen);
+      }
     });
   }
 }

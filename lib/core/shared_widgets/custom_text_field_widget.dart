@@ -1,5 +1,5 @@
-import 'package:accessories_store/core/utilies/app_colors.dart';
-import 'package:accessories_store/core/utilies/app_text_style.dart';
+import 'package:accessories_store/core/utils/app_colors.dart';
+import 'package:accessories_store/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -46,7 +46,7 @@ class CustomTextFieldWidget extends StatelessWidget {
     return Theme(
       data: ThemeData(
         textSelectionTheme: TextSelectionThemeData(
-          selectionColor: selectionColor ?? AppColors.lemonColor.withOpacity(0.5),
+          selectionColor: selectionColor ?? AppColors.lemonColor.withValues(alpha: 0.5),
           selectionHandleColor: selectionHandleColor ?? AppColors.primaryColor
         )
       ),

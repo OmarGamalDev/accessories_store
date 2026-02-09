@@ -1,11 +1,9 @@
+import 'package:accessories_store/core/utils/app_colors.dart';
 import 'package:accessories_store/generated/locale_keys.g.dart';
 import 'package:animated_snack_bar/animated_snack_bar.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../utilies/app_colors.dart';
-import '../utilies/app_text_style.dart';
+import '../utils/app_text_style.dart';
 class CustomAnimatedShowSnackBar{
   static void successSnackBar(
       {

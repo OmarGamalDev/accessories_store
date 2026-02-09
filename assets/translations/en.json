@@ -122,5 +122,6 @@
   "error": "Error!",
   "warning": "Warning!",
   "info": "Info!",
-  "reload": "Reload"
+  "reload": "Reload",
+  "get_started": "Get Started"
 }

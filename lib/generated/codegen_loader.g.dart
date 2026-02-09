@@ -138,7 +138,8 @@ class CodegenLoader extends AssetLoader{
   "error": "خطأ!",
   "warning": "تحذير!",
   "info": "معلومه!",
-  "reload": "إعادة تحميل"
+  "reload": "إعادة تحميل",
+  "get_started": "ابدأ"
 };
 static const Map<String,dynamic> _en = {
   "appName": "AccessoriesStore",
@@ -264,7 +265,8 @@ static const Map<String,dynamic> _en = {
   "error": "Error!",
   "warning": "Warning!",
   "info": "Info!",
-  "reload": "Reload"
+  "reload": "Reload",
+  "get_started": "Get Started"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};
 }

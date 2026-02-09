@@ -7,17 +7,20 @@ class EndPoint {
 }
 
 class ApiKey {
-  static String statusCode = "statusCode";
-  static String errorMessage = "errorMessage";
-  static String fullName = "fullname";
-  static String email = "email";
-  static String username = "username";
-  static String phone = "phone";
-  static String password = "password";
-  static String image = "image";
-  static String token = "token";
-  static String id = "id";
-  static String name = "name";
-  static String confirmPassword = "confirmPassword";
-  static String location = "location";
+  static const String statusCode = "statusCode";
+  static const String errorMessage = "errorMessage";
+  static const String fullName = "fullname";
+  static const String email = "email";
+  static const String username = "username";
+  static const String phone = "phone";
+  static const String password = "password";
+  static const String image = "image";
+  static const String token = "token";
+  static const String id = "id";
+  static const String name = "name";
+  static const String confirmPassword = "confirmPassword";
+  static const String location = "location";
+
+  /// Authentication token prefix for Bearer-style authentication
+  static const String tokenPrefix = "FOODAPI";
 }

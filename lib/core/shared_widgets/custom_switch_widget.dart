@@ -1,6 +1,6 @@
+import 'package:accessories_store/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
-import '../utilies/app_colors.dart';
 
 class CustomSwitchWidget extends StatelessWidget {
   const CustomSwitchWidget({super.key, required this.value, this.onChanged, this.activeThumbColor, this.inactiveThumbColor, this.activeTrackColor, this.inactiveTrackColor, this.overlayColor, this.trackOutlineColor, this.trackOutlineWidth});

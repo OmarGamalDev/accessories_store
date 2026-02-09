@@ -1,3 +1,5 @@
+import 'package:accessories_store/Features/onboarding/presentation/views/on_boarding_view.dart';
+import 'package:accessories_store/Features/splash/presentation/view/splash_view.dart';
 import 'package:accessories_store/core/routes/app_routes.dart';
 import 'package:accessories_store/features/about_us/presentation/view/about_us_screen.dart';
 import 'package:accessories_store/features/auth/forgot_password/presentation/view/forgot_password_screen.dart';
@@ -15,21 +17,19 @@ import 'package:accessories_store/features/my_account/presentation/view/my_accou
 import 'package:accessories_store/features/my_orders/presentation/view/my_orders_screen.dart';
 import 'package:accessories_store/features/my_profile/presentation/view/my_profile_screen.dart';
 import 'package:accessories_store/features/notification/presentation/view/notification_screen.dart';
-import 'package:accessories_store/features/onboarding/presentation/view/onboarding_screen.dart';
 import 'package:accessories_store/features/order_tracking/presentation/view/order_tracking_screen.dart';
 import 'package:accessories_store/features/payments/presentation/view/payments_screen.dart';
 import 'package:accessories_store/features/products/presentation/view/products_screen.dart';
 import 'package:accessories_store/features/review/presentation/view/review_screen.dart';
 import 'package:accessories_store/features/search/presentation/view/search_screen.dart';
-import 'package:accessories_store/features/splash/presentation/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../utilies/app_colors.dart';
+import '../utils/app_colors.dart';
 
 class RouterGenerationConfig {
   static GoRouter routerConfig = GoRouter(
-    initialLocation: AppRoutes.onboardingScreen,
+    initialLocation: AppRoutes.splashScreen,
     errorBuilder: (context, state) {
       return errorBuilder();
     },
@@ -39,14 +39,14 @@ class RouterGenerationConfig {
         GoRoute(
             path: AppRoutes.onboardingScreen,
             name: AppRoutes.onboardingScreen,
-          builder: (context, state) => OnboardingScreen(),
+          builder: (context, state) => OnBoardingView(),
         ),
 
         /// Splash
         GoRoute(
             path: AppRoutes.splashScreen,
             name: AppRoutes.splashScreen,
-          builder: (context, state) => SplashScreen(),
+          builder: (context, state) => SplashView(),
         ),
 
         /// Login

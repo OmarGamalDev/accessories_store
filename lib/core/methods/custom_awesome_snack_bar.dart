@@ -1,8 +1,7 @@
-import 'package:accessories_store/core/utilies/app_colors.dart';
+import 'package:accessories_store/core/utils/app_colors.dart';
 import 'package:accessories_store/generated/locale_keys.g.dart';
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAwesomeSnackBarWidget {
   static showSuccessSnackBar(BuildContext context, String message) {

@@ -127,5 +127,6 @@ abstract class  LocaleKeys {
   static const warning = 'warning';
   static const info = 'info';
   static const reload = 'reload';
+  static const get_started = 'get_started';
 
 }

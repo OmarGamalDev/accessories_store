@@ -1,67 +1,124 @@
 import 'package:shared_preferences/shared_preferences.dart';
-
 class CacheHelper {
-  static late SharedPreferences sharedPreferences;
+  CacheHelper._(); // Private constructor to prevent instantiation
 
-//! Here The Initialize of cache .
-  init() async {
-    sharedPreferences = await SharedPreferences.getInstance();
+  static late SharedPreferences _prefs;
+
+  // ============= Cache Keys Constants =============
+  static const String kIsOnBoardingViewSeen = 'isOnBoardingViewSeen';
+  static const String kToken = 'token';
+  static const String kUserId = 'userId';
+  static const String kUserName = 'userName';
+  static const String kUserEmail = 'userEmail';
+  static const String kIsLoggedIn = 'isLoggedIn';
+  static const String kLanguage = 'language';
+  static const String kThemeMode = 'themeMode';
+
+  // ============= Initialize =============
+  static Future<void> init() async {
+    _prefs = await SharedPreferences.getInstance();
   }
 
-  String? getDataString({required String key}) {
-    return sharedPreferences.getString(key);
+  // ============= String Methods =============
+  static Future<bool> setString(String key, String value) async {
+    return await _prefs.setString(key, value);
   }
 
-//! this method to put data in local database using key
-
-  Future<bool> saveData({required String key, required dynamic value}) async {
-    if (value is bool) {
-      return await sharedPreferences.setBool(key, value);
-    }
-
-    if (value is String) {
-      return await sharedPreferences.setString(key, value);
-    }
-
-    if (value is int) {
-      return await sharedPreferences.setInt(key, value);
-    } else {
-      return await sharedPreferences.setDouble(key, value);
-    }
+  /// Get String value
+  static String? getString(String key) {
+    return _prefs.getString(key);
   }
 
-//! this method to get data already saved in local database
-
-  dynamic getData({required String key}) {
-    return sharedPreferences.get(key);
+  // ============= Bool Methods =============
+  /// Save Bool value
+  static Future<bool> setBool(String key, bool value) async {
+    return await _prefs.setBool(key, value);
   }
 
-//! remove data using specific key
-
-  Future<bool> removeData({required String key}) async {
-    return await sharedPreferences.remove(key);
+  /// Get Bool value (default: false)
+  static bool getBool(String key, {bool defaultValue = false}) {
+    return _prefs.getBool(key) ?? defaultValue;
   }
 
-//! this method to check if local database contains {key}
-  Future<bool> containsKey({required String key}) async {
-    return sharedPreferences.containsKey(key);
+  // ============= Int Methods =============
+  /// Save Int value
+  static Future<bool> setInt(String key, int value) async {
+    return await _prefs.setInt(key, value);
   }
 
-  Future<bool> clearData({required String key}) async {
-    return sharedPreferences.clear();
+  /// Get Int value
+  static int? getInt(String key) {
+    return _prefs.getInt(key);
   }
 
-//! this fun to put data in local data base using key
-  Future<dynamic> put({
+  // ============= Double Methods =============
+  /// Save Double value
+  static Future<bool> setDouble(String key, double value) async {
+    return await _prefs.setDouble(key, value);
+  }
+
+  /// Get Double value
+  static double? getDouble(String key) {
+    return _prefs.getDouble(key);
+  }
+
+  // ============= Generic Methods =============
+  /// Get any data type
+  static dynamic get(String key) {
+    return _prefs.get(key);
+  }
+
+  /// Save data dynamically based on type
+  static Future<bool> saveData({
     required String key,
     required dynamic value,
   }) async {
     if (value is String) {
-      return await sharedPreferences.setString(key, value);
+      return await setString(key, value);
     } else if (value is bool) {
-      return await sharedPreferences.setBool(key, value);
-    } else {
-      return await sharedPreferences.setInt(key, value);
+      return await setBool(key, value);
+    } else if (value is int) {
+      return await setInt(key, value);
+    } else if (value is double) {
+      return await setDouble(key, value);
     }
+    return false;
+  }
+
+  // ============= Utility Methods =============
+  /// Check if key exists
+  static bool containsKey(String key) {
+    return _prefs.containsKey(key);
+  }
+
+  /// Remove specific key
+  static Future<bool> remove(String key) async {
+    return await _prefs.remove(key);
+  }
+
+  /// Clear all data
+  static Future<bool> clearAll() async {
+    return await _prefs.clear();
+  }
+
+  /// Get all keys
+  static Set<String> getAllKeys() {
+    return _prefs.getKeys();
+  }
+
+  // ============= User Session Methods =============
+  /// Check if user is logged in
+  static bool get isLoggedIn => getBool(kIsLoggedIn);
+
+  /// Check if onboarding is completed
+  static bool get isOnBoardingCompleted => getBool(kIsOnBoardingViewSeen);
+
+  /// Clear user session
+  static Future<void> clearUserSession() async {
+    await remove(kToken);
+    await remove(kUserId);
+    await remove(kUserName);
+    await remove(kUserEmail);
+    await setBool(kIsLoggedIn, false);
   }
 }
