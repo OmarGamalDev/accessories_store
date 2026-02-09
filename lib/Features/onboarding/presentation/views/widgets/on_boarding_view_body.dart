@@ -65,9 +65,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             prefixSvgIcon: isLastPage ? null : Assets.imagesSvgIconNext,
             onPressed: () async {
               HapticFeedback.lightImpact();
-
               if (isLastPage) {
-                // Mark onboarding as completed
                 await CacheHelper.setBool(
                   CacheHelper.kIsOnBoardingViewSeen,
                   true,

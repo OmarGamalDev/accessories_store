@@ -1,4 +1,5 @@
 import 'package:accessories_store/Features/onboarding/presentation/views/widgets/on_boarding_view_body.dart';
+import 'package:accessories_store/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 
@@ -7,7 +8,7 @@ class OnBoardingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.whiteColor,
       body: const OnBoardingViewBody(),
     );
   }
