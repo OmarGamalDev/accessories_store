@@ -1,10 +1,8 @@
-
 import 'package:accessories_store/core/network/api_consumer.dart';
 import 'package:accessories_store/core/network/api_interceptors.dart';
 import 'package:accessories_store/core/network/api_constants.dart';
 import 'package:accessories_store/core/errors/exceptions.dart';
 import 'package:dio/dio.dart';
-
 
 class DioConsumer extends ApiConsumer {
   final Dio dio;
@@ -12,14 +10,16 @@ class DioConsumer extends ApiConsumer {
   DioConsumer({required this.dio}) {
     dio.options.baseUrl = EndPoint.baseUrl;
     dio.interceptors.add(ApiInterceptor());
-    dio.interceptors.add(LogInterceptor(
-      request: true,
-      requestHeader: true,
-      requestBody: true,
-      responseHeader: true,
-      responseBody: true,
-      error: true,
-    ));
+    dio.interceptors.add(
+      LogInterceptor(
+        request: true,
+        requestHeader: true,
+        requestBody: true,
+        responseHeader: true,
+        responseBody: true,
+        error: true,
+      ),
+    );
   }
 
   @override
@@ -42,8 +42,11 @@ class DioConsumer extends ApiConsumer {
   }
 
   @override
-  Future get(String path,
-      {Object? data, Map<String, dynamic>? queryParameters}) async {
+  Future get(
+    String path, {
+    Object? data,
+    Map<String, dynamic>? queryParameters,
+  }) async {
     try {
       final response = await dio.get(
         path,
@@ -93,9 +96,14 @@ class DioConsumer extends ApiConsumer {
       handleDioExceptions(e);
     }
   }
-  
+
   @override
-  Future put(String path, {dynamic data, Map<String, dynamic>? queryParameters, bool isFromData = false}) async {
+  Future put(
+    String path, {
+    dynamic data,
+    Map<String, dynamic>? queryParameters,
+    bool isFromData = false,
+  }) async {
     try {
       final response = await dio.put(
         path,
@@ -108,4 +116,3 @@ class DioConsumer extends ApiConsumer {
     }
   }
 }
-

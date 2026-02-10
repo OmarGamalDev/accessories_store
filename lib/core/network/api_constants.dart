@@ -9,7 +9,7 @@ class EndPoint {
 
 class ApiKey {
   static const String statusCode = "statusCode";
-  static const String errorMessage = "errorMessage";
+  static const String message = "message";
   static const String fullName = "fullname";
   static const String email = "email";
   static const String username = "username";

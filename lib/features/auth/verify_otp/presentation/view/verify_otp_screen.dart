@@ -5,8 +5,6 @@ class VerifyOtpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text("verifyOtp Screen"),),
-    );
+    return Scaffold(body: Center(child: Text("verifyOtp Screen")));
   }
 }

@@ -9,8 +9,8 @@ class AppSnackBar {
 
   static void showSuccess({
     required BuildContext context,
-    required String title,
-    required String message,
+    String title = '',
+    String message = '',
     SnackBarPosition position = SnackBarPosition.bottom,
   }) {
     showSnackBar(
@@ -24,8 +24,8 @@ class AppSnackBar {
 
   static void showError({
     required BuildContext context,
-    required String title,
-    required String message,
+    String title = '',
+    String message = '',
     SnackBarPosition position = SnackBarPosition.bottom,
   }) {
     showSnackBar(
@@ -39,8 +39,8 @@ class AppSnackBar {
 
   static void showWarning({
     required BuildContext context,
-    required String title,
-    required String message,
+    String title = '',
+    String message = '',
     SnackBarPosition position = SnackBarPosition.bottom,
   }) {
     showSnackBar(
@@ -54,8 +54,8 @@ class AppSnackBar {
 
   static void showInfo({
     required BuildContext context,
-    required String title,
-    required String message,
+    String title = '',
+    String message = '',
     SnackBarPosition position = SnackBarPosition.bottom,
   }) {
     showSnackBar(
@@ -69,8 +69,8 @@ class AppSnackBar {
 
   static void showSuccessBanner({
     required BuildContext context,
-    required String title,
-    required String message,
+    String title = '',
+    String message = '',
   }) {
     showMaterialBanner(
       context: context,
@@ -82,8 +82,8 @@ class AppSnackBar {
 
   static void showErrorBanner({
     required BuildContext context,
-    required String title,
-    required String message,
+    String title = '',
+    String message = '',
   }) {
     showMaterialBanner(
       context: context,
@@ -95,8 +95,8 @@ class AppSnackBar {
 
   static void showWarningBanner({
     required BuildContext context,
-    required String title,
-    required String message,
+    String title = '',
+    String message = '',
   }) {
     showMaterialBanner(
       context: context,
@@ -108,8 +108,8 @@ class AppSnackBar {
 
   static void showInfoBanner({
     required BuildContext context,
-    required String title,
-    required String message,
+    String title = '',
+    String message = '',
   }) {
     showMaterialBanner(
       context: context,
@@ -121,8 +121,8 @@ class AppSnackBar {
 
   static void showSnackBar({
     required BuildContext context,
-    required String title,
-    required String message,
+    String title = '',
+    String message = '',
     required ContentType contentType,
     SnackBarPosition position = SnackBarPosition.bottom,
   }) {
@@ -151,8 +151,8 @@ class AppSnackBar {
 
   static void showMaterialBanner({
     required BuildContext context,
-    required String title,
-    required String message,
+    String title = '',
+    String message = '',
     required ContentType contentType,
   }) {
     final materialBanner = MaterialBanner(

@@ -12,7 +12,7 @@ class Validators {
     if (!emailRegex.hasMatch(value)) {
       return 'Enter a valid email (e.g., user@example.com)';
     }
-    
+
     return null;
   }
 
@@ -40,22 +40,23 @@ class Validators {
     return null;
   }
 
-static String? validateRetypePassword(String? value, String? originalPassword) {
-  if (value == null || value.isEmpty) {
-    return 'Retype Password is required';
+  static String? validateRetypePassword(
+    String? value,
+    String? originalPassword,
+  ) {
+    if (value == null || value.isEmpty) {
+      return 'Retype Password is required';
+    }
+
+    if (value != originalPassword) {
+      return 'Passwords do not match';
+    }
+
+    final passwordValidation = validatePassword(value);
+    if (passwordValidation != null) return passwordValidation;
+
+    return null;
   }
-
-  if (value != originalPassword) {
-    return 'Passwords do not match';
-  }
-
-  final passwordValidation = validatePassword(value);
-  if (passwordValidation != null) return passwordValidation;
-
-  return null;
-}
-
-
 
   static String? validateName(String? value) {
     if (value == null || value.trim().isEmpty) {

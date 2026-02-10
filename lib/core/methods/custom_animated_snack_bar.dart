@@ -5,15 +5,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/app_text_style.dart';
-class CustomAnimatedShowSnackBar{
-  static void successSnackBar(
-      {
-        required BuildContext context,
-        required String message,
-        MobileSnackBarPosition? mobileSnackBarPosition
-      }
-      )
-  {
+
+class CustomAnimatedShowSnackBar {
+  static void successSnackBar({
+    required BuildContext context,
+    required String message,
+    MobileSnackBarPosition? mobileSnackBarPosition,
+  }) {
     AnimatedSnackBar(
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 400),
@@ -29,20 +27,18 @@ class CustomAnimatedShowSnackBar{
           iconData: Icons.done,
           titleTextStyle: AppTextStyle.whiteW700S16,
           messageTextStyle: AppTextStyle.whiteW700S16,
-          messageText:message,
+          messageText: message,
           type: AnimatedSnackBarType.success,
         );
       }),
     ).show(context);
   }
-  static void failureSnackBar(
-      {
-        required BuildContext context,
-        required String message,
-        MobileSnackBarPosition? mobileSnackBarPosition
-      }
-      )
-  {
+
+  static void failureSnackBar({
+    required BuildContext context,
+    required String message,
+    MobileSnackBarPosition? mobileSnackBarPosition,
+  }) {
     AnimatedSnackBar(
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 400),
@@ -58,20 +54,18 @@ class CustomAnimatedShowSnackBar{
           iconData: Icons.close,
           titleTextStyle: AppTextStyle.whiteW700S16,
           messageTextStyle: AppTextStyle.whiteW700S16,
-          messageText:message,
+          messageText: message,
           type: AnimatedSnackBarType.error,
         );
       }),
     ).show(context);
   }
-  static void warningSnackBar(
-      {
-        required BuildContext context,
-        required String message,
-        MobileSnackBarPosition? mobileSnackBarPosition
-      }
-      )
-  {
+
+  static void warningSnackBar({
+    required BuildContext context,
+    required String message,
+    MobileSnackBarPosition? mobileSnackBarPosition,
+  }) {
     AnimatedSnackBar(
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 400),
@@ -87,20 +81,18 @@ class CustomAnimatedShowSnackBar{
           iconData: Icons.warning,
           titleTextStyle: AppTextStyle.whiteW700S16,
           messageTextStyle: AppTextStyle.whiteW700S16,
-          messageText:message,
+          messageText: message,
           type: AnimatedSnackBarType.warning,
         );
       }),
     ).show(context);
   }
-  static void infoSnackBar(
-      {
-        required BuildContext context,
-        required String message,
-        MobileSnackBarPosition? mobileSnackBarPosition
-      }
-      )
-  {
+
+  static void infoSnackBar({
+    required BuildContext context,
+    required String message,
+    MobileSnackBarPosition? mobileSnackBarPosition,
+  }) {
     AnimatedSnackBar(
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 400),
@@ -116,7 +108,7 @@ class CustomAnimatedShowSnackBar{
           iconData: Icons.help,
           titleTextStyle: AppTextStyle.whiteW700S16,
           messageTextStyle: AppTextStyle.whiteW700S16,
-          messageText:message,
+          messageText: message,
           type: AnimatedSnackBarType.info,
         );
       }),
