@@ -9,7 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ForgotPasswordBody extends StatefulWidget {
-  const ForgotPasswordBody({super.key});
+  const ForgotPasswordBody({super.key, required this.email});
+  final String email;
   @override
   State<ForgotPasswordBody> createState() => _ForgotPasswordBodyState();
 }
@@ -19,6 +20,11 @@ class _ForgotPasswordBodyState extends State<ForgotPasswordBody> {
   TextEditingController emailController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  @override
+  void initState() {
+    emailController.text = widget.email;
+    super.initState();
+  }
   @override
   void dispose() {
     super.dispose();

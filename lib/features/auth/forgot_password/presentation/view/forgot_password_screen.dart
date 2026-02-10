@@ -13,7 +13,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
-  const ForgotPasswordScreen({super.key});
+  const ForgotPasswordScreen({super.key, required this.email});
+  final String email;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class ForgotPasswordScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: AppColors.whiteColor,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           flexibleSpace: CustomAppBarWidget(
             title: LocaleKeys.verifyAppbar.tr(),
             leading: CustomArrowBackWidget(
@@ -31,7 +33,7 @@ class ForgotPasswordScreen extends StatelessWidget {
             ),
           ),
         ),
-        body: ForgotPasswordBody(),
+        body: ForgotPasswordBody(email: email,),
       ),
     );
   }

@@ -5,6 +5,7 @@ class EndPoint {
   static String login = "api/auth/login";
   static String refreshToken = "api/auth/refresh-token";
   static String forgotPassword = "api/auth/forgot-password";
+  static String loginWithGoogle = "api/auth/google/login";
 }
 
 class ApiKey {

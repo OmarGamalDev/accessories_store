@@ -29,7 +29,7 @@ import '../utils/app_colors.dart';
 
 class RouterGenerationConfig {
   static GoRouter routerConfig = GoRouter(
-    initialLocation: AppRoutes.forgotPasswordScreen,
+    initialLocation: AppRoutes.splashScreen,
     errorBuilder: (context, state) {
       return errorBuilder();
     },
@@ -66,7 +66,10 @@ class RouterGenerationConfig {
       GoRoute(
         path: AppRoutes.forgotPasswordScreen,
         name: AppRoutes.forgotPasswordScreen,
-        builder: (context, state) => ForgotPasswordScreen(),
+        builder: (context, state) { 
+          final String email = state.extra as String;
+          return ForgotPasswordScreen(email: email,);
+          },
       ),
 
       /// New Password

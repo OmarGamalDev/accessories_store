@@ -113,6 +113,7 @@ class CustomTextFieldWidget extends StatelessWidget {
           suffixIcon: suffixIcon != null
               ? IconButton(
                   onPressed: suffixOnPressed,
+                  highlightColor: AppColors.primaryColor.withValues(alpha: 0.3),
                   icon: Icon(
                     suffixIcon,
                     color: suffixColor ?? AppColors.greyColor,
