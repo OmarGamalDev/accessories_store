@@ -1,3 +1,4 @@
+import 'package:accessories_store/Features/auth/register/presentation/view/register_view.dart';
 import 'package:accessories_store/Features/onboarding/presentation/views/on_boarding_view.dart';
 import 'package:accessories_store/Features/splash/presentation/view/splash_view.dart';
 import 'package:accessories_store/core/routes/app_routes.dart';
@@ -5,7 +6,6 @@ import 'package:accessories_store/features/about_us/presentation/view/about_us_s
 import 'package:accessories_store/features/auth/forgot_password/presentation/view/forgot_password_screen.dart';
 import 'package:accessories_store/features/auth/login/presentation/view/login_screen.dart';
 import 'package:accessories_store/features/auth/new_password/presentation/view/new_password_screen.dart';
-import 'package:accessories_store/features/auth/register/presentation/view/register_screen.dart';
 import 'package:accessories_store/features/auth/verify_otp/presentation/view/verify_otp_screen.dart';
 import 'package:accessories_store/features/best_selling/presentation/view/best_selling_screen.dart';
 import 'package:accessories_store/features/cart/presentation/view/cart_screen.dart';
@@ -61,7 +61,7 @@ class RouterGenerationConfig {
         GoRoute(
           path: AppRoutes.registerScreen,
           name: AppRoutes.registerScreen,
-          builder: (context, state) => RegisterScreen(),
+          builder: (context, state) => RegisterView(),
         ),
 
 

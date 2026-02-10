@@ -22,6 +22,8 @@ abstract class  LocaleKeys {
   static const lastName = 'lastName';
   static const termCon1 = 'termCon1';
   static const termCon2 = 'termCon2';
+  static const termCon3 = 'termCon3';
+  static const termCon4 = 'termCon4';
   static const allreadyhaveAccount = 'allreadyhaveAccount';
   static const signupSuccess = 'signupSuccess';
   static const notAvailable = 'notAvailable';

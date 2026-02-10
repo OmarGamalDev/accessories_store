@@ -93,6 +93,11 @@ class AppTextStyle {
     fontSize: 13.sp,
     fontWeight: FontWeight.w700,
   );
+  static TextStyle primaryW700S13lightGreenColor = GoogleFonts.cairo(
+    color: AppColors.lightGreenColor,
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w700,
+  );
 
   ////////////////////////// white color
 

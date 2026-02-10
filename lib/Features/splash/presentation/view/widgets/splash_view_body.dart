@@ -13,7 +13,8 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProviderStateMixin {
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> fadeAnimation;
   late Animation<double> scaleAnimation;
@@ -102,7 +103,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
         if (isLoggedIn) {
           GoRouter.of(context).pushReplacement(AppRoutes.homeScreen);
         } else {
-          GoRouter.of(context).pushReplacement(AppRoutes.loginScreen);
+          GoRouter.of(context).pushReplacement(AppRoutes.registerScreen);
         }
       } else {
         GoRouter.of(context).pushReplacement(AppRoutes.onboardingScreen);
