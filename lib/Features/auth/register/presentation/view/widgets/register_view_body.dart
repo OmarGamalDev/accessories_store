@@ -1,5 +1,7 @@
+import 'package:accessories_store/Features/auth/register/presentation/manager/register_cubit/register_cubit.dart';
 import 'package:accessories_store/Features/auth/register/presentation/view/widgets/already_have_account.dart';
 import 'package:accessories_store/Features/auth/register/presentation/view/widgets/term_and_condations.dart';
+import 'package:accessories_store/core/methods/app_snack_bar.dart';
 import 'package:accessories_store/core/services/input_validator.dart';
 import 'package:accessories_store/core/shared_widgets/custom_button_widget.dart';
 import 'package:accessories_store/core/shared_widgets/custom_spacing_widget.dart';
@@ -9,6 +11,7 @@ import 'package:accessories_store/core/utils/app_text_style.dart';
 import 'package:accessories_store/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RegisterViewBody extends StatefulWidget {
@@ -38,87 +41,133 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: Form(
-            key: formKey,
-            child: Column(
-              children: [
-                const CustomHeightSpacingWidget(height: 20),
-                Text(LocaleKeys.signUp.tr(), style: AppTextStyle.blackW700S19),
-                const CustomHeightSpacingWidget(height: 24),
-                CustomTextFieldWidget(
-                  controller: nameController,
-                  hintText: LocaleKeys.fullName.tr(),
-                  fillColor: AppColors.textFieldColor,
-                  hintTextStyle: AppTextStyle.greyW600S13,
-                  prefixIcon: Icons.person_outline,
-                  prefixColor: AppColors.greyColor,
-                  keyboardType: TextInputType.name,
-                  validator: Validators.validateName,
+    return BlocConsumer<RegisterCubit, RegisterState>(
+      listener: (context, state) {
+        if (state is RegisterLoading) {
+        } else if (state is RegisterSuccess) {
+          AppSnackBar.showSuccess(
+            message: LocaleKeys.registrationSuccessful.tr(),
+            context: context,
+          );
+        } else if (state is RegisterError) {
+          AppSnackBar.showError(message: state.message, context: context);
+        }
+      },
+      builder: (context, state) {
+        final isLoading = state is RegisterLoading;
+        return SingleChildScrollView(
+          child: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: Form(
+                key: formKey,
+                child: Column(
+                  children: [
+                    const CustomHeightSpacingWidget(height: 20),
+                    Text(
+                      LocaleKeys.signUp.tr(),
+                      style: AppTextStyle.blackW700S19,
+                    ),
+                    const CustomHeightSpacingWidget(height: 24),
+                    CustomTextFieldWidget(
+                      controller: nameController,
+                      hintText: LocaleKeys.fullName.tr(),
+                      fillColor: AppColors.textFieldColor,
+                      hintTextStyle: AppTextStyle.greyW600S13,
+                      prefixIcon: Icons.person_outline,
+                      prefixColor: AppColors.greyColor,
+                      keyboardType: TextInputType.name,
+                      validator: Validators.validateName,
+                    ),
+                    const CustomHeightSpacingWidget(height: 16),
+                    CustomTextFieldWidget(
+                      controller: emailController,
+                      hintText: LocaleKeys.email.tr(),
+                      fillColor: AppColors.textFieldColor,
+                      hintTextStyle: AppTextStyle.greyW600S13,
+                      prefixIcon: Icons.email_outlined,
+                      prefixColor: AppColors.greyColor,
+                      keyboardType: TextInputType.emailAddress,
+                      validator: Validators.validateEmail,
+                    ),
+                    const CustomHeightSpacingWidget(height: 16),
+                    CustomTextFieldWidget(
+                      controller: passwordController,
+                      hintText: LocaleKeys.password.tr(),
+                      fillColor: AppColors.textFieldColor,
+                      hintTextStyle: AppTextStyle.greyW600S13,
+                      prefixIcon: Icons.lock_outline,
+                      prefixColor: AppColors.greyColor,
+                      obscureText: !isPasswordVisible,
+                      suffixIcon: isPasswordVisible
+                          ? Icons.visibility_outlined
+                          : Icons.visibility_off_outlined,
+                      suffixColor: AppColors.greyColor,
+                      suffixOnPressed: () {
+                        setState(() {
+                          isPasswordVisible = !isPasswordVisible;
+                        });
+                      },
+                      keyboardType: TextInputType.visiblePassword,
+                      validator: Validators.validatePassword,
+                    ),
+                    const CustomHeightSpacingWidget(height: 16),
+                    TermAndCondations(
+                      onChanged: (value) {
+                        setState(() {
+                          isTermsAccepted = value;
+                        });
+                      },
+                    ),
+                    const CustomHeightSpacingWidget(height: 30),
+                    CustomButtonWidget(
+                      title: isLoading ? '' : LocaleKeys.createAcc.tr(),
+                      titleStyle: AppTextStyle.whiteW700S16,
+                      buttonColor: AppColors.primaryColor,
+                      buttonHeight: 54.h,
+                      buttonWidth: double.infinity,
+                      borderRadiusButton: 12.r,
+                      borderSideColor: AppColors.primaryColor,
+                      onPressed: isLoading ? null : handleRegister,
+                      child: isLoading
+                          ? SizedBox(
+                              width: 24.w,
+                              height: 24.h,
+                              child: CircularProgressIndicator(
+                                color: AppColors.whiteColor,
+                                strokeWidth: 2.w,
+                              ),
+                            )
+                          : null,
+                    ),
+                    const CustomHeightSpacingWidget(height: 26),
+                    const AlreadyHaveAccountWidget(),
+                  ],
                 ),
-                const CustomHeightSpacingWidget(height: 16),
-                CustomTextFieldWidget(
-                  controller: emailController,
-                  hintText: LocaleKeys.email.tr(),
-                  fillColor: AppColors.textFieldColor,
-                  hintTextStyle: AppTextStyle.greyW600S13,
-                  prefixIcon: Icons.email_outlined,
-                  prefixColor: AppColors.greyColor,
-                  keyboardType: TextInputType.emailAddress,
-                  validator: Validators.validateEmail,
-                ),
-                const CustomHeightSpacingWidget(height: 16),
-                CustomTextFieldWidget(
-                  controller: passwordController,
-                  hintText: LocaleKeys.password.tr(),
-                  fillColor: AppColors.textFieldColor,
-                  hintTextStyle: AppTextStyle.greyW600S13,
-                  prefixIcon: Icons.lock_outline,
-                  prefixColor: AppColors.greyColor,
-                  obscureText: !isPasswordVisible,
-                  suffixIcon: isPasswordVisible
-                      ? Icons.visibility_outlined
-                      : Icons.visibility_off_outlined,
-                  suffixColor: AppColors.greyColor,
-                  suffixOnPressed: () {
-                    setState(() {
-                      isPasswordVisible = !isPasswordVisible;
-                    });
-                  },
-                  keyboardType: TextInputType.visiblePassword,
-                  validator: Validators.validatePassword,
-                ),
-                const CustomHeightSpacingWidget(height: 16),
-                TermAndCondations(
-                  onChanged: (value) {
-                    setState(() {
-                      isTermsAccepted = value;
-                    });
-                  },
-                ),
-                const CustomHeightSpacingWidget(height: 30),
-                CustomButtonWidget(
-                  title: LocaleKeys.createAcc.tr(),
-                  titleStyle: AppTextStyle.whiteW700S16,
-                  buttonColor: AppColors.primaryColor,
-                  buttonHeight: 54.h,
-                  buttonWidth: double.infinity,
-                  borderRadiusButton: 12.r,
-                  borderSideColor: AppColors.primaryColor,
-                  onPressed: () {
-                    if (formKey.currentState!.validate()) {}
-                  },
-                ),
-                const CustomHeightSpacingWidget(height: 26),
-                const AlreadyHaveAccountWidget(),
-              ],
+              ),
             ),
           ),
-        ),
-      ),
+        );
+      },
+    );
+  }
+
+  void handleRegister() {
+    FocusScope.of(context).unfocus();
+    if (!formKey.currentState!.validate()) {
+      return;
+    }
+    if (!isTermsAccepted) {
+      AppSnackBar.showWarning(
+        message: LocaleKeys.termCon1.tr(),
+        context: context,
+      );
+      return;
+    }
+    context.read<RegisterCubit>().register(
+      name: nameController.text.trim(),
+      email: emailController.text.trim(),
+      password: passwordController.text,
     );
   }
 }

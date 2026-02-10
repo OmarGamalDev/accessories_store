@@ -1,5 +1,6 @@
 class EndPoint {
   static String baseUrl = "https://accessories-eshop.runasp.net/";
+  static String register = "api/auth/register";
   static String createUser = "api/auth/register";
   static String verifyEmail = "api/auth/verify-email";
   static String login = "api/auth/login";
