@@ -81,6 +81,7 @@ class CustomTextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isRTL = Directionality.of(context) == TextDirection.rtl;
+
     return Theme(
       data: ThemeData(
         textSelectionTheme: TextSelectionThemeData(
@@ -92,18 +93,19 @@ class CustomTextFieldWidget extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         minLines: minLines ?? 1,
-        maxLines: minLines ?? 1,
+        maxLines: obscureText == true ? 1 : (maxLines ?? minLines ?? 1),
         keyboardType: keyboardType ?? TextInputType.text,
         obscureText: obscureText ?? false,
         validator: validator,
         keyboardAppearance: keyboardAppearance ?? Brightness.light,
-        // autovalidateMode: AutovalidateMode.always,
         cursorColor: cursorColor ?? AppColors.primaryColor,
-        obscuringCharacter: obscuringCharacter ?? "*",
-        textDirection: textDirection ?? TextDirection.ltr,
-        selectAllOnFocus: true,
+        obscuringCharacter: obscuringCharacter ?? "•",
+        textDirection: textDirection, 
+        textAlign: isRTL ? TextAlign.right : TextAlign.left,
         decoration: InputDecoration(
-          hintTextDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
+          hintTextDirection:
+              hintTextDirection ??
+              (isRTL ? TextDirection.rtl : TextDirection.ltr),
           helperText: helperText,
           helperStyle: helperTextStyle ?? AppTextStyle.blackW700S13,
           hintText: hintText,

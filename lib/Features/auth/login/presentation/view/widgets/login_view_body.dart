@@ -1,5 +1,7 @@
-import 'package:accessories_store/Features/auth/register/presentation/view/widgets/already_have_account.dart';
-import 'package:accessories_store/Features/auth/register/presentation/view/widgets/term_and_condations.dart';
+import 'package:accessories_store/Features/auth/login/presentation/view/widgets/donot_have_account.dart';
+import 'package:accessories_store/Features/auth/login/presentation/view/widgets/forget_password_widget.dart';
+import 'package:accessories_store/Features/auth/login/presentation/view/widgets/login_with_google.dart';
+import 'package:accessories_store/Features/auth/login/presentation/view/widgets/or_widget.dart';
 import 'package:accessories_store/core/services/input_validator.dart';
 import 'package:accessories_store/core/shared_widgets/custom_button_widget.dart';
 import 'package:accessories_store/core/shared_widgets/custom_spacing_widget.dart';
@@ -11,16 +13,15 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class RegisterViewBody extends StatefulWidget {
-  const RegisterViewBody({super.key});
+class LoginViewBody extends StatefulWidget {
+  const LoginViewBody({super.key});
 
   @override
-  State<RegisterViewBody> createState() => _RegisterViewBodyState();
+  State<LoginViewBody> createState() => _LoginViewBodyState();
 }
 
-class _RegisterViewBodyState extends State<RegisterViewBody> {
+class _LoginViewBodyState extends State<LoginViewBody> {
   final formKey = GlobalKey<FormState>();
-  final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -30,7 +31,6 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
 
   @override
   void dispose() {
-    nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
@@ -47,19 +47,8 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
             child: Column(
               children: [
                 const CustomHeightSpacingWidget(height: 20),
-                Text(LocaleKeys.signUp.tr(), style: AppTextStyle.blackW700S19),
+                Text(LocaleKeys.login.tr(), style: AppTextStyle.blackW700S19),
                 const CustomHeightSpacingWidget(height: 24),
-                CustomTextFieldWidget(
-                  controller: nameController,
-                  hintText: LocaleKeys.fullName.tr(),
-                  fillColor: AppColors.textFieldColor,
-                  hintTextStyle: AppTextStyle.greyW600S13,
-                  prefixIcon: Icons.person_outline,
-                  prefixColor: AppColors.greyColor,
-                  keyboardType: TextInputType.name,
-                  validator: Validators.validateName,
-                ),
-                const CustomHeightSpacingWidget(height: 16),
                 CustomTextFieldWidget(
                   controller: emailController,
                   hintText: LocaleKeys.email.tr(),
@@ -92,16 +81,10 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                   validator: Validators.validatePassword,
                 ),
                 const CustomHeightSpacingWidget(height: 16),
-                TermAndCondations(
-                  onChanged: (value) {
-                    setState(() {
-                      isTermsAccepted = value;
-                    });
-                  },
-                ),
-                const CustomHeightSpacingWidget(height: 30),
+                const ForgetPasswordWidget(),
+                const CustomHeightSpacingWidget(height: 33),
                 CustomButtonWidget(
-                  title: LocaleKeys.createAcc.tr(),
+                  title: LocaleKeys.login.tr(),
                   titleStyle: AppTextStyle.whiteW700S16,
                   buttonColor: AppColors.primaryColor,
                   buttonHeight: 54.h,
@@ -113,7 +96,11 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                   },
                 ),
                 const CustomHeightSpacingWidget(height: 26),
-                const AlreadyHaveAccountWidget(),
+                const DonotHaveAccount(),
+                const CustomHeightSpacingWidget(height: 37),
+                const OrWidget(),
+                const CustomHeightSpacingWidget(height: 16),
+                const LoginWithGoogle(),
               ],
             ),
           ),

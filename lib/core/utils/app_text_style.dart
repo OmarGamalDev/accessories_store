@@ -16,6 +16,11 @@ class AppTextStyle {
     fontSize: 19.sp,
     fontWeight: FontWeight.w700,
   );
+  static TextStyle blackW700S18 = GoogleFonts.cairo(
+    color: AppColors.blackColor,
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w700,
+  );
   static TextStyle blackW700S16 = GoogleFonts.cairo(
     color: AppColors.blackColor,
     fontSize: 16.sp,
