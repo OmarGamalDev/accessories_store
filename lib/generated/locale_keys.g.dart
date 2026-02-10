@@ -117,6 +117,8 @@ abstract class  LocaleKeys {
   static const personalInfo = 'personalInfo';
   static const noInternet = 'noInternet';
   static const noInternet2 = 'noInternet2';
+  static const errorMessage = 'errorMessage';
+  static const sentOtpSuccess = 'sentOtpSuccess';
   static const tryAgain = 'tryAgain';
   static const orderSuccess = 'orderSuccess';
   static const orderSuccess2 = 'orderSuccess2';

@@ -1,6 +1,6 @@
 import 'package:accessories_store/Features/auth/login/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:accessories_store/Features/auth/login/presentation/view/widgets/donot_have_account.dart';
-import 'package:accessories_store/Features/auth/login/presentation/view/widgets/forget_password_widget.dart';
+import 'package:accessories_store/features/auth/login/presentation/view/widgets/forget_password_widget.dart';
 import 'package:accessories_store/Features/auth/login/presentation/view/widgets/login_with_google.dart';
 import 'package:accessories_store/Features/auth/login/presentation/view/widgets/or_widget.dart';
 import 'package:accessories_store/core/methods/app_snack_bar.dart';
@@ -48,14 +48,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           AppSnackBar.showSuccess(
             message: LocaleKeys.loginSuccessful.tr(),
             context: context,
-            position: SnackBarPosition.top,
+            position: SnackBarPosition.bottom,
           );
         } else if (state is LoginError) {
           AppSnackBar.showError(
             title: LocaleKeys.loginFailed.tr(),
             message: state.message,
             context: context,
-            position: SnackBarPosition.top,
+            position: SnackBarPosition.bottom
           );
         } else {}
       },
@@ -79,10 +79,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     CustomTextFieldWidget(
                       controller: emailController,
                       hintText: LocaleKeys.email.tr(),
-                      fillColor: AppColors.textFieldColor,
-                      hintTextStyle: AppTextStyle.greyW600S13,
                       prefixIcon: Icons.email_outlined,
-                      prefixColor: AppColors.greyColor,
                       keyboardType: TextInputType.emailAddress,
                       validator: Validators.validateEmail,
                     ),
@@ -90,10 +87,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     CustomTextFieldWidget(
                       controller: passwordController,
                       hintText: LocaleKeys.password.tr(),
-                      fillColor: AppColors.textFieldColor,
-                      hintTextStyle: AppTextStyle.greyW600S13,
                       prefixIcon: Icons.lock_outline,
-                      prefixColor: AppColors.greyColor,
                       obscureText: !isPasswordVisible,
                       suffixIcon: isPasswordVisible
                           ? Icons.visibility_outlined
@@ -108,26 +102,17 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       validator: Validators.validatePassword,
                     ),
                     const CustomHeightSpacingWidget(height: 16),
-                    const ForgetPasswordWidget(),
+                     ForgetPasswordWidget(email:emailController.text.trim()),
                     const CustomHeightSpacingWidget(height: 33),
                     CustomButtonWidget(
                       title: isLoading ? '' : LocaleKeys.login.tr(),
                       titleStyle: AppTextStyle.whiteW700S16,
-                      buttonColor: AppColors.primaryColor,
-                      buttonHeight: 54.h,
+                      buttonColor: isLoading ? AppColors.borderTextFieldColor :AppColors.primaryColor,
                       buttonWidth: double.infinity,
-                      borderRadiusButton: 12.r,
-                      borderSideColor: AppColors.primaryColor,
+                      borderSideColor: isLoading ? AppColors.borderTextFieldColor :AppColors.primaryColor,
                       onPressed: isLoading ? null : handleLogin,
                       child: isLoading
-                          ? SizedBox(
-                              width: 24.w,
-                              height: 24.h,
-                              child: CustomLoadingWidget(
-                                color: AppColors.whiteColor,
-                                strokeWidth: 3.w,
-                              ),
-                            )
+                          ? CustomLoadingWidget(color: AppColors.whiteColor,strokeAlign: -1,strokeWidth: 2,cicleHeight: 25,cicleWidth: 25,)
                           : null,
                     ),
                     const CustomHeightSpacingWidget(height: 26),

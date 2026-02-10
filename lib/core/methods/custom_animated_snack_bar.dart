@@ -1,6 +1,7 @@
 import 'package:accessories_store/core/utils/app_colors.dart';
 import 'package:accessories_store/generated/locale_keys.g.dart';
 import 'package:animated_snack_bar/animated_snack_bar.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/app_text_style.dart';
@@ -14,13 +15,12 @@ class CustomAnimatedShowSnackBar {
     AnimatedSnackBar(
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 400),
-      mobileSnackBarPosition:
-          mobileSnackBarPosition ?? MobileSnackBarPosition.top,
-      mobilePositionSettings: MobilePositionSettings(bottomOnAppearance: 20.w),
+      mobileSnackBarPosition: mobileSnackBarPosition ?? MobileSnackBarPosition.bottom,
+      mobilePositionSettings:  MobilePositionSettings(bottomOnAppearance: 20.w),
       animationCurve: Curves.easeOutBack,
       builder: ((context) {
-        return MaterialAnimatedSnackBar(
-          titleText: LocaleKeys.success,
+        return  MaterialAnimatedSnackBar(
+          titleText: LocaleKeys.success.tr(),
           backgroundColor: AppColors.greenColor,
           foregroundColor: AppColors.whiteColor,
           borderRadius: BorderRadius.circular(10.r),
@@ -42,13 +42,12 @@ class CustomAnimatedShowSnackBar {
     AnimatedSnackBar(
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 400),
-      mobileSnackBarPosition:
-          mobileSnackBarPosition ?? MobileSnackBarPosition.top,
-      mobilePositionSettings: MobilePositionSettings(bottomOnAppearance: 20.w),
+      mobileSnackBarPosition: mobileSnackBarPosition ?? MobileSnackBarPosition.bottom,
+      mobilePositionSettings:  MobilePositionSettings(bottomOnAppearance: 20.w),
       animationCurve: Curves.easeOutBack,
       builder: ((context) {
-        return MaterialAnimatedSnackBar(
-          titleText: LocaleKeys.error,
+        return  MaterialAnimatedSnackBar(
+          titleText: LocaleKeys.error.tr(),
           backgroundColor: AppColors.redColor,
           foregroundColor: AppColors.whiteColor,
           borderRadius: BorderRadius.circular(15.r),
@@ -70,13 +69,12 @@ class CustomAnimatedShowSnackBar {
     AnimatedSnackBar(
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 400),
-      mobileSnackBarPosition:
-          mobileSnackBarPosition ?? MobileSnackBarPosition.top,
-      mobilePositionSettings: MobilePositionSettings(bottomOnAppearance: 20.w),
+      mobileSnackBarPosition: mobileSnackBarPosition ?? MobileSnackBarPosition.bottom,
+      mobilePositionSettings:  MobilePositionSettings(bottomOnAppearance: 20.w),
       animationCurve: Curves.easeOutBack,
       builder: ((context) {
-        return MaterialAnimatedSnackBar(
-          titleText: LocaleKeys.warning,
+        return  MaterialAnimatedSnackBar(
+          titleText: LocaleKeys.warning.tr(),
           backgroundColor: AppColors.orangeColor,
           foregroundColor: AppColors.whiteColor,
           borderRadius: BorderRadius.circular(10.r),
@@ -98,13 +96,12 @@ class CustomAnimatedShowSnackBar {
     AnimatedSnackBar(
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 400),
-      mobileSnackBarPosition:
-          mobileSnackBarPosition ?? MobileSnackBarPosition.top,
-      mobilePositionSettings: MobilePositionSettings(bottomOnAppearance: 20.w),
+      mobileSnackBarPosition: mobileSnackBarPosition ?? MobileSnackBarPosition.bottom,
+      mobilePositionSettings:  MobilePositionSettings(bottomOnAppearance: 20.w),
       animationCurve: Curves.easeOutBack,
       builder: ((context) {
-        return MaterialAnimatedSnackBar(
-          titleText: LocaleKeys.info,
+        return  MaterialAnimatedSnackBar(
+          titleText: LocaleKeys.info.tr(),
           backgroundColor: AppColors.blueColor,
           foregroundColor: AppColors.whiteColor,
           borderRadius: BorderRadius.circular(10.r),
