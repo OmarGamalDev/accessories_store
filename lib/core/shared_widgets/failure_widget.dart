@@ -4,6 +4,7 @@ import 'package:accessories_store/generated/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 import '../utils/app_text_style.dart';
 import 'custom_button_widget.dart';
+
 class FailureWidget extends StatelessWidget {
   const FailureWidget({super.key, required this.text, this.onPressed});
   final String text;
@@ -14,21 +15,18 @@ class FailureWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            text,
-            style: AppTextStyle.blackW700S16,
-          ),
+          Text(text, style: AppTextStyle.blackW700S16),
           const CustomHeightSpacingWidget(height: 15),
           CustomButtonWidget(
             prefixIcon: Icons.restart_alt,
             onPressed: onPressed,
-              title: LocaleKeys.reload,
-              buttonColor: AppColors.primaryColor,
-              borderSideColor: AppColors.primaryColor,
-              buttonWidth: 200,
-              buttonHeight: 50,
-              borderRadiusButton: 35,
-          )
+            title: LocaleKeys.reload,
+            buttonColor: AppColors.primaryColor,
+            borderSideColor: AppColors.primaryColor,
+            buttonWidth: 200,
+            buttonHeight: 50,
+            borderRadiusButton: 35,
+          ),
         ],
       ),
     );

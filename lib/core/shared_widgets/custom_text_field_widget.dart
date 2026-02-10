@@ -4,7 +4,44 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
-  const CustomTextFieldWidget({super.key, this.controller, this.minLines, this.maxLines, this.keyboardType, this.obscureText, this.validator, this.keyboardAppearance, this.cursorColor, this.obscuringCharacter, this.selectionColor, this.selectionHandleColor, this.enableBorderRadius, this.focusBorderRadius, this.errorBorderRadius, this.enableBorderSide, this.focusBorderSide, this.errorBorderSide, this.fillColor, this.enableBorderColor, this.errorBorderColor, this.focusBorderColor, this.hintText, this.hintTextStyle, this.helperText, this.helperTextStyle, this.prefixIcon, this.suffixIcon, this.suffixColor, this.prefixColor, this.suffixSize, this.prefixSize, this.suffixOnPressed, this.prefixOnPressed, this.textDirection, this.hintTextDirection});
+  const CustomTextFieldWidget({
+    super.key,
+    this.controller,
+    this.minLines,
+    this.maxLines,
+    this.keyboardType,
+    this.obscureText,
+    this.validator,
+    this.keyboardAppearance,
+    this.cursorColor,
+    this.obscuringCharacter,
+    this.selectionColor,
+    this.selectionHandleColor,
+    this.enableBorderRadius,
+    this.focusBorderRadius,
+    this.errorBorderRadius,
+    this.enableBorderSide,
+    this.focusBorderSide,
+    this.errorBorderSide,
+    this.fillColor,
+    this.enableBorderColor,
+    this.errorBorderColor,
+    this.focusBorderColor,
+    this.hintText,
+    this.hintTextStyle,
+    this.helperText,
+    this.helperTextStyle,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.suffixColor,
+    this.prefixColor,
+    this.suffixSize,
+    this.prefixSize,
+    this.suffixOnPressed,
+    this.prefixOnPressed,
+    this.textDirection,
+    this.hintTextDirection,
+  });
 
   final TextEditingController? controller;
   final int? minLines;
@@ -43,51 +80,81 @@ class CustomTextFieldWidget extends StatelessWidget {
   final TextDirection? hintTextDirection;
   @override
   Widget build(BuildContext context) {
+    final isRTL = Directionality.of(context) == TextDirection.rtl;
+
     return Theme(
       data: ThemeData(
         textSelectionTheme: TextSelectionThemeData(
-          selectionColor: selectionColor ?? AppColors.lemonColor.withValues(alpha: 0.5),
-          selectionHandleColor: selectionHandleColor ?? AppColors.primaryColor
-        )
+          selectionColor:
+              selectionColor ?? AppColors.lemonColor.withValues(alpha: 0.5),
+          selectionHandleColor: selectionHandleColor ?? AppColors.primaryColor,
+        ),
       ),
       child: TextFormField(
         controller: controller,
         minLines: minLines ?? 1,
-        maxLines: minLines ?? 1,
+        maxLines: obscureText == true ? 1 : (maxLines ?? minLines ?? 1),
         keyboardType: keyboardType ?? TextInputType.text,
         obscureText: obscureText ?? false,
         validator: validator,
         keyboardAppearance: keyboardAppearance ?? Brightness.light,
-        // autovalidateMode: AutovalidateMode.always,
         cursorColor: cursorColor ?? AppColors.primaryColor,
-        obscuringCharacter: obscuringCharacter ?? "*",
-        textDirection: textDirection ?? TextDirection.ltr,
-        selectAllOnFocus: true,
+        obscuringCharacter: obscuringCharacter ?? "•",
+        textDirection: textDirection,
+        textAlign: isRTL ? TextAlign.right : TextAlign.left,
         decoration: InputDecoration(
-          hintTextDirection: hintTextDirection ?? TextDirection.ltr,
+          hintTextDirection:
+              hintTextDirection ??
+              (isRTL ? TextDirection.rtl : TextDirection.ltr),
           helperText: helperText,
           helperStyle: helperTextStyle ?? AppTextStyle.blackW700S13,
           hintText: hintText,
           hintStyle: hintTextStyle ?? AppTextStyle.greyW700S13,
-          suffixIcon: IconButton(onPressed: suffixOnPressed, icon: Icon(suffixIcon,color: suffixColor?? AppColors.greyColor,size: suffixSize?.sp ?? 24.sp,)),
-          prefixIcon: IconButton(onPressed: prefixOnPressed, icon: Icon(prefixIcon,color: prefixColor?? AppColors.greyColor,size: prefixSize?.sp ?? 24.sp,)),
+          suffixIcon: suffixIcon != null
+              ? IconButton(
+                  onPressed: suffixOnPressed,
+                  icon: Icon(
+                    suffixIcon,
+                    color: suffixColor ?? AppColors.greyColor,
+                    size: suffixSize?.sp ?? 24.sp,
+                  ),
+                )
+              : null,
+          prefixIcon: prefixIcon != null
+              ? IconButton(
+                  onPressed: prefixOnPressed,
+                  icon: Icon(
+                    prefixIcon,
+                    color: prefixColor ?? AppColors.greyColor,
+                    size: prefixSize?.sp ?? 24.sp,
+                  ),
+                )
+              : null,
           fillColor: fillColor ?? AppColors.textFieldColor,
           filled: true,
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(enableBorderRadius?.r ?? 4.r),
-            borderSide: BorderSide(color: enableBorderColor??AppColors.borderTextFieldColor)
+            borderSide: BorderSide(
+              color: enableBorderColor ?? AppColors.borderTextFieldColor,
+            ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(focusBorderRadius?.r ?? 4.r),
-            borderSide: BorderSide(color: focusBorderColor??AppColors.primaryColor)
+            borderSide: BorderSide(
+              color: focusBorderColor ?? AppColors.primaryColor,
+            ),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(errorBorderRadius?.r ?? 4.r),
-            borderSide: BorderSide(color: errorBorderColor??AppColors.redColor)
+            borderSide: BorderSide(
+              color: errorBorderColor ?? AppColors.redColor,
+            ),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(errorBorderRadius?.r ?? 4.r),
-            borderSide: BorderSide(color: errorBorderColor??AppColors.redColor)
+            borderSide: BorderSide(
+              color: errorBorderColor ?? AppColors.redColor,
+            ),
           ),
         ),
       ),

@@ -5,8 +5,6 @@ class BestSellingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text("BestSelling Screen"),),
-    );
+    return Scaffold(body: Center(child: Text("BestSelling Screen")));
   }
 }

@@ -1,11 +1,11 @@
+import 'package:accessories_store/Features/auth/login/presentation/view/login_view.dart';
+import 'package:accessories_store/Features/auth/register/presentation/view/register_view.dart';
 import 'package:accessories_store/Features/onboarding/presentation/views/on_boarding_view.dart';
 import 'package:accessories_store/Features/splash/presentation/view/splash_view.dart';
 import 'package:accessories_store/core/routes/app_routes.dart';
 import 'package:accessories_store/features/about_us/presentation/view/about_us_screen.dart';
 import 'package:accessories_store/features/auth/forgot_password/presentation/view/forgot_password_screen.dart';
-import 'package:accessories_store/features/auth/login/presentation/view/login_screen.dart';
 import 'package:accessories_store/features/auth/new_password/presentation/view/new_password_screen.dart';
-import 'package:accessories_store/features/auth/register/presentation/view/register_screen.dart';
 import 'package:accessories_store/features/auth/verify_otp/presentation/view/verify_otp_screen.dart';
 import 'package:accessories_store/features/best_selling/presentation/view/best_selling_screen.dart';
 import 'package:accessories_store/features/cart/presentation/view/cart_screen.dart';
@@ -33,213 +33,178 @@ class RouterGenerationConfig {
     errorBuilder: (context, state) {
       return errorBuilder();
     },
-      routes: [
+    routes: [
+      /// Onboarding
+      GoRoute(
+        path: AppRoutes.onboardingScreen,
+        name: AppRoutes.onboardingScreen,
+        builder: (context, state) => OnBoardingView(),
+      ),
 
-        /// Onboarding
-        GoRoute(
-            path: AppRoutes.onboardingScreen,
-            name: AppRoutes.onboardingScreen,
-          builder: (context, state) => OnBoardingView(),
-        ),
+      /// Splash
+      GoRoute(
+        path: AppRoutes.splashScreen,
+        name: AppRoutes.splashScreen,
+        builder: (context, state) => SplashView(),
+      ),
 
-        /// Splash
-        GoRoute(
-            path: AppRoutes.splashScreen,
-            name: AppRoutes.splashScreen,
-          builder: (context, state) => SplashView(),
-        ),
+      /// Login
+      GoRoute(
+        path: AppRoutes.loginScreen,
+        name: AppRoutes.loginScreen,
+        builder: (context, state) => LoginView(),
+      ),
 
-        /// Login
-        GoRoute(
-          path: AppRoutes.loginScreen,
-          name: AppRoutes.loginScreen,
-          builder: (context, state) => LoginScreen(),
-        ),
+      /// Register
+      GoRoute(
+        path: AppRoutes.registerScreen,
+        name: AppRoutes.registerScreen,
+        builder: (context, state) => RegisterView(),
+      ),
 
+      /// Forgot Password
+      GoRoute(
+        path: AppRoutes.forgotPasswordScreen,
+        name: AppRoutes.forgotPasswordScreen,
+        builder: (context, state) => ForgotPasswordScreen(),
+      ),
 
-        /// Register
-        GoRoute(
-          path: AppRoutes.registerScreen,
-          name: AppRoutes.registerScreen,
-          builder: (context, state) => RegisterScreen(),
-        ),
+      /// New Password
+      GoRoute(
+        path: AppRoutes.newPasswordScreen,
+        name: AppRoutes.newPasswordScreen,
+        builder: (context, state) => NewPasswordScreen(),
+      ),
 
+      /// verify Otp
+      GoRoute(
+        path: AppRoutes.verifyOtpScreen,
+        name: AppRoutes.verifyOtpScreen,
+        builder: (context, state) => VerifyOtpScreen(),
+      ),
 
-        /// Forgot Password
-        GoRoute(
-          path: AppRoutes.forgotPasswordScreen,
-          name: AppRoutes.forgotPasswordScreen,
-          builder: (context, state) => ForgotPasswordScreen(),
-        ),
+      /// About Us
+      GoRoute(
+        path: AppRoutes.aboutUsScreen,
+        name: AppRoutes.aboutUsScreen,
+        builder: (context, state) => AboutUsScreen(),
+      ),
 
+      /// Best Selling
+      GoRoute(
+        path: AppRoutes.bestSellingScreen,
+        name: AppRoutes.bestSellingScreen,
+        builder: (context, state) => BestSellingScreen(),
+      ),
 
-        /// New Password
-        GoRoute(
-          path: AppRoutes.newPasswordScreen,
-          name: AppRoutes.newPasswordScreen,
-          builder: (context, state) => NewPasswordScreen(),
-        ),
+      /// Cart
+      GoRoute(
+        path: AppRoutes.cartScreen,
+        name: AppRoutes.cartScreen,
+        builder: (context, state) => CartScreen(),
+      ),
 
+      /// Checkout
+      GoRoute(
+        path: AppRoutes.checkoutScreen,
+        name: AppRoutes.checkoutScreen,
+        builder: (context, state) => CheckoutScreen(),
+      ),
 
+      /// Favorite
+      GoRoute(
+        path: AppRoutes.favoriteScreen,
+        name: AppRoutes.favoriteScreen,
+        builder: (context, state) => FavoriteScreen(),
+      ),
 
-        /// verify Otp
-        GoRoute(
-          path: AppRoutes.verifyOtpScreen,
-          name: AppRoutes.verifyOtpScreen,
-          builder: (context, state) => VerifyOtpScreen(),
-        ),
+      /// Home
+      GoRoute(
+        path: AppRoutes.homeScreen,
+        name: AppRoutes.homeScreen,
+        builder: (context, state) => HomeScreen(),
+      ),
 
+      /// Item Product
+      GoRoute(
+        path: AppRoutes.itemProductDetailScreen,
+        name: AppRoutes.itemProductDetailScreen,
+        builder: (context, state) => ItemProductDetailScreen(),
+      ),
 
-        /// About Us
-        GoRoute(
-          path: AppRoutes.aboutUsScreen,
-          name: AppRoutes.aboutUsScreen,
-          builder: (context, state) => AboutUsScreen(),
-        ),
+      /// My Account
+      GoRoute(
+        path: AppRoutes.myAccountScreen,
+        name: AppRoutes.myAccountScreen,
+        builder: (context, state) => MyAccountScreen(),
+      ),
 
+      /// My Orders
+      GoRoute(
+        path: AppRoutes.myOrdersScreen,
+        name: AppRoutes.myOrdersScreen,
+        builder: (context, state) => MyOrdersScreen(),
+      ),
 
-        /// Best Selling
-        GoRoute(
-          path: AppRoutes.bestSellingScreen,
-          name: AppRoutes.bestSellingScreen,
-          builder: (context, state) => BestSellingScreen(),
-        ),
+      /// My Profile
+      GoRoute(
+        path: AppRoutes.myProfileScreen,
+        name: AppRoutes.myProfileScreen,
+        builder: (context, state) => MyProfileScreen(),
+      ),
 
+      /// Notification
+      GoRoute(
+        path: AppRoutes.notificationScreen,
+        name: AppRoutes.notificationScreen,
+        builder: (context, state) => NotificationScreen(),
+      ),
 
-        /// Cart
-        GoRoute(
-          path: AppRoutes.cartScreen,
-          name: AppRoutes.cartScreen,
-          builder: (context, state) => CartScreen(),
-        ),
+      /// Order Tracking
+      GoRoute(
+        path: AppRoutes.orderTrackingScreen,
+        name: AppRoutes.orderTrackingScreen,
+        builder: (context, state) => OrderTrackingScreen(),
+      ),
 
+      /// Payments
+      GoRoute(
+        path: AppRoutes.paymentsScreen,
+        name: AppRoutes.paymentsScreen,
+        builder: (context, state) => PaymentsScreen(),
+      ),
 
-        /// Checkout
-        GoRoute(
-          path: AppRoutes.checkoutScreen,
-          name: AppRoutes.checkoutScreen,
-          builder: (context, state) => CheckoutScreen(),
-        ),
+      /// Products
+      GoRoute(
+        path: AppRoutes.productsScreen,
+        name: AppRoutes.productsScreen,
+        builder: (context, state) => ProductsScreen(),
+      ),
 
+      /// Review
+      GoRoute(
+        path: AppRoutes.reviewScreen,
+        name: AppRoutes.reviewScreen,
+        builder: (context, state) => ReviewScreen(),
+      ),
 
-        /// Favorite
-        GoRoute(
-          path: AppRoutes.favoriteScreen,
-          name: AppRoutes.favoriteScreen,
-          builder: (context, state) => FavoriteScreen(),
-        ),
-
-
-        /// Home
-        GoRoute(
-          path: AppRoutes.homeScreen,
-          name: AppRoutes.homeScreen,
-          builder: (context, state) => HomeScreen(),
-        ),
-
-
-        /// Item Product
-        GoRoute(
-          path: AppRoutes.itemProductDetailScreen,
-          name: AppRoutes.itemProductDetailScreen,
-          builder: (context, state) => ItemProductDetailScreen(),
-        ),
-
-
-        /// My Account
-        GoRoute(
-          path: AppRoutes.myAccountScreen,
-          name: AppRoutes.myAccountScreen,
-          builder: (context, state) => MyAccountScreen(),
-        ),
-
-
-        /// My Orders
-        GoRoute(
-          path: AppRoutes.myOrdersScreen,
-          name: AppRoutes.myOrdersScreen,
-          builder: (context, state) => MyOrdersScreen(),
-        ),
-
-
-        /// My Profile
-        GoRoute(
-          path: AppRoutes.myProfileScreen,
-          name: AppRoutes.myProfileScreen,
-          builder: (context, state) => MyProfileScreen(),
-        ),
-
-
-        /// Notification
-        GoRoute(
-          path: AppRoutes.notificationScreen,
-          name: AppRoutes.notificationScreen,
-          builder: (context, state) => NotificationScreen(),
-        ),
-
-
-        /// Order Tracking
-        GoRoute(
-          path: AppRoutes.orderTrackingScreen,
-          name: AppRoutes.orderTrackingScreen,
-          builder: (context, state) => OrderTrackingScreen(),
-        ),
-
-
-        /// Payments
-        GoRoute(
-          path: AppRoutes.paymentsScreen,
-          name: AppRoutes.paymentsScreen,
-          builder: (context, state) => PaymentsScreen(),
-        ),
-
-
-        /// Products
-        GoRoute(
-          path: AppRoutes.productsScreen,
-          name: AppRoutes.productsScreen,
-          builder: (context, state) => ProductsScreen(),
-        ),
-
-
-        /// Review
-        GoRoute(
-          path: AppRoutes.reviewScreen,
-          name: AppRoutes.reviewScreen,
-          builder: (context, state) => ReviewScreen(),
-        ),
-
-
-        /// Search
-        GoRoute(
-          path: AppRoutes.searchScreen,
-          name: AppRoutes.searchScreen,
-          builder: (context, state) => SearchScreen(),
-        ),
-
-
-
-
-      ]
-
-
-
-
-
-
-
+      /// Search
+      GoRoute(
+        path: AppRoutes.searchScreen,
+        name: AppRoutes.searchScreen,
+        builder: (context, state) => SearchScreen(),
+      ),
+    ],
   );
 }
 
-Widget errorBuilder(){
+Widget errorBuilder() {
   return Scaffold(
     appBar: AppBar(
       centerTitle: true,
       backgroundColor: AppColors.redColor,
       title: Text("Error Screen"),
     ),
-    body: Center(
-      child: Text("No Page Found"),
-    ),
+    body: Center(child: Text("No Page Found")),
   );
 }

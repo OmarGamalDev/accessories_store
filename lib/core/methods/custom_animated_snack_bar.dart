@@ -4,23 +4,22 @@ import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/app_text_style.dart';
-class CustomAnimatedShowSnackBar{
-  static void successSnackBar(
-      {
-        required BuildContext context,
-        required String message,
-        MobileSnackBarPosition? mobileSnackBarPosition
-      }
-      )
-  {
+
+class CustomAnimatedShowSnackBar {
+  static void successSnackBar({
+    required BuildContext context,
+    required String message,
+    MobileSnackBarPosition? mobileSnackBarPosition,
+  }) {
     AnimatedSnackBar(
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 400),
-      mobileSnackBarPosition: mobileSnackBarPosition ?? MobileSnackBarPosition.top,
-      mobilePositionSettings:  MobilePositionSettings(bottomOnAppearance: 20.w),
+      mobileSnackBarPosition:
+          mobileSnackBarPosition ?? MobileSnackBarPosition.top,
+      mobilePositionSettings: MobilePositionSettings(bottomOnAppearance: 20.w),
       animationCurve: Curves.easeOutBack,
       builder: ((context) {
-        return  MaterialAnimatedSnackBar(
+        return MaterialAnimatedSnackBar(
           titleText: LocaleKeys.success,
           backgroundColor: AppColors.greenColor,
           foregroundColor: AppColors.whiteColor,
@@ -28,28 +27,27 @@ class CustomAnimatedShowSnackBar{
           iconData: Icons.done,
           titleTextStyle: AppTextStyle.whiteW700S16,
           messageTextStyle: AppTextStyle.whiteW700S16,
-          messageText:message,
+          messageText: message,
           type: AnimatedSnackBarType.success,
         );
       }),
     ).show(context);
   }
-  static void failureSnackBar(
-      {
-        required BuildContext context,
-        required String message,
-        MobileSnackBarPosition? mobileSnackBarPosition
-      }
-      )
-  {
+
+  static void failureSnackBar({
+    required BuildContext context,
+    required String message,
+    MobileSnackBarPosition? mobileSnackBarPosition,
+  }) {
     AnimatedSnackBar(
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 400),
-      mobileSnackBarPosition: mobileSnackBarPosition ?? MobileSnackBarPosition.top,
-      mobilePositionSettings:  MobilePositionSettings(bottomOnAppearance: 20.w),
+      mobileSnackBarPosition:
+          mobileSnackBarPosition ?? MobileSnackBarPosition.top,
+      mobilePositionSettings: MobilePositionSettings(bottomOnAppearance: 20.w),
       animationCurve: Curves.easeOutBack,
       builder: ((context) {
-        return  MaterialAnimatedSnackBar(
+        return MaterialAnimatedSnackBar(
           titleText: LocaleKeys.error,
           backgroundColor: AppColors.redColor,
           foregroundColor: AppColors.whiteColor,
@@ -57,28 +55,27 @@ class CustomAnimatedShowSnackBar{
           iconData: Icons.close,
           titleTextStyle: AppTextStyle.whiteW700S16,
           messageTextStyle: AppTextStyle.whiteW700S16,
-          messageText:message,
+          messageText: message,
           type: AnimatedSnackBarType.error,
         );
       }),
     ).show(context);
   }
-  static void warningSnackBar(
-      {
-        required BuildContext context,
-        required String message,
-        MobileSnackBarPosition? mobileSnackBarPosition
-      }
-      )
-  {
+
+  static void warningSnackBar({
+    required BuildContext context,
+    required String message,
+    MobileSnackBarPosition? mobileSnackBarPosition,
+  }) {
     AnimatedSnackBar(
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 400),
-      mobileSnackBarPosition: mobileSnackBarPosition ?? MobileSnackBarPosition.top,
-      mobilePositionSettings:  MobilePositionSettings(bottomOnAppearance: 20.w),
+      mobileSnackBarPosition:
+          mobileSnackBarPosition ?? MobileSnackBarPosition.top,
+      mobilePositionSettings: MobilePositionSettings(bottomOnAppearance: 20.w),
       animationCurve: Curves.easeOutBack,
       builder: ((context) {
-        return  MaterialAnimatedSnackBar(
+        return MaterialAnimatedSnackBar(
           titleText: LocaleKeys.warning,
           backgroundColor: AppColors.orangeColor,
           foregroundColor: AppColors.whiteColor,
@@ -86,28 +83,27 @@ class CustomAnimatedShowSnackBar{
           iconData: Icons.warning,
           titleTextStyle: AppTextStyle.whiteW700S16,
           messageTextStyle: AppTextStyle.whiteW700S16,
-          messageText:message,
+          messageText: message,
           type: AnimatedSnackBarType.warning,
         );
       }),
     ).show(context);
   }
-  static void infoSnackBar(
-      {
-        required BuildContext context,
-        required String message,
-        MobileSnackBarPosition? mobileSnackBarPosition
-      }
-      )
-  {
+
+  static void infoSnackBar({
+    required BuildContext context,
+    required String message,
+    MobileSnackBarPosition? mobileSnackBarPosition,
+  }) {
     AnimatedSnackBar(
       duration: const Duration(seconds: 3),
       animationDuration: const Duration(milliseconds: 400),
-      mobileSnackBarPosition: mobileSnackBarPosition ?? MobileSnackBarPosition.top,
-      mobilePositionSettings:  MobilePositionSettings(bottomOnAppearance: 20.w),
+      mobileSnackBarPosition:
+          mobileSnackBarPosition ?? MobileSnackBarPosition.top,
+      mobilePositionSettings: MobilePositionSettings(bottomOnAppearance: 20.w),
       animationCurve: Curves.easeOutBack,
       builder: ((context) {
-        return  MaterialAnimatedSnackBar(
+        return MaterialAnimatedSnackBar(
           titleText: LocaleKeys.info,
           backgroundColor: AppColors.blueColor,
           foregroundColor: AppColors.whiteColor,
@@ -115,7 +111,7 @@ class CustomAnimatedShowSnackBar{
           iconData: Icons.help,
           titleTextStyle: AppTextStyle.whiteW700S16,
           messageTextStyle: AppTextStyle.whiteW700S16,
-          messageText:message,
+          messageText: message,
           type: AnimatedSnackBarType.info,
         );
       }),

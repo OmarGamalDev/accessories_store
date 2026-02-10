@@ -2,7 +2,8 @@
 class Assets {
   Assets._();
 
-  static const String imagesAccessoriesStoreLogo = 'assets/images/accessories_store_logo.png';
+  static const String imagesAccessoriesStoreLogo =
+      'assets/images/accessories_store_logo.png';
   static const String lottiesDoneCorrect = 'assets/lotties/done_correct.json';
   static const String svgCart = 'assets/svg/cart.svg';
   static const String svgDelivered = 'assets/svg/delivered.svg';
@@ -17,5 +18,4 @@ class Assets {
   static const String svgUser = 'assets/svg/user.svg';
   static const String translationsAr = 'assets/translations/ar.json';
   static const String translationsEnglish = 'assets/translations/en.json';
-
 }

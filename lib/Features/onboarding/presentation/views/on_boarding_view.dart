@@ -2,7 +2,6 @@ import 'package:accessories_store/Features/onboarding/presentation/views/widgets
 import 'package:accessories_store/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
-
 class OnBoardingView extends StatelessWidget {
   const OnBoardingView({super.key});
   @override
