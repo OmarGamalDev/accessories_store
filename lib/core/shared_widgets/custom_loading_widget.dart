@@ -7,18 +7,24 @@ class CustomLoadingWidget extends StatelessWidget {
     super.key,
     this.color,
     this.strokeWidth,
-    this.strokeAlign,
+    this.strokeAlign, this.cicleHeight, this.cicleWidth,
   });
   final Color? color;
   final double? strokeWidth;
   final double? strokeAlign;
+  final double? cicleHeight;
+  final double? cicleWidth;
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: CircularProgressIndicator(
-        color: color ?? AppColors.primaryColor,
-        strokeWidth: strokeWidth?.w ?? 4.w,
-        strokeAlign: strokeAlign,
+      child: SizedBox(
+        height: cicleHeight?.sp??30.sp,
+        width: cicleWidth?.sp??30.sp,
+        child: CircularProgressIndicator(
+          color: color ?? AppColors.primaryColor,
+          strokeWidth: strokeWidth?.w ?? 4.w,
+          strokeAlign: strokeAlign,
+        ),
       ),
     );
   }

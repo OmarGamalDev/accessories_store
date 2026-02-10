@@ -38,7 +38,7 @@ class AccessoriesStore extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
-          title: LocaleKeys.appName,
+          title: LocaleKeys.appName.tr(),
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
