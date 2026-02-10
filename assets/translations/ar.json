@@ -4,6 +4,7 @@
   "password": "كلمة السر",
   "login": "سجّل دخول",
   "loginSuccessful": "تم تسجيل الدخول بنجاح",
+  "registrationSuccessful": "تم انشاء الحساب بنجاح",
   "loginFailed": "فشل تسجيل الدخول",
   "forgotPassword": "نسيت كلمة السر؟",
   "dontHaveAccount1": "ليس لديك حساب؟",
