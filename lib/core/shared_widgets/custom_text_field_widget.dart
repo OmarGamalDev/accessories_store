@@ -100,7 +100,7 @@ class CustomTextFieldWidget extends StatelessWidget {
         keyboardAppearance: keyboardAppearance ?? Brightness.light,
         cursorColor: cursorColor ?? AppColors.primaryColor,
         obscuringCharacter: obscuringCharacter ?? "•",
-        textDirection: textDirection, 
+        textDirection: textDirection,
         textAlign: isRTL ? TextAlign.right : TextAlign.left,
         decoration: InputDecoration(
           hintTextDirection:

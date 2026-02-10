@@ -6,18 +6,15 @@ class CustomHeightSpacingWidget extends StatelessWidget {
   final double height;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height.h,
-    );
+    return SizedBox(height: height.h);
   }
 }
+
 class CustomWidthSpacingWidget extends StatelessWidget {
   const CustomWidthSpacingWidget({super.key, required this.width});
   final double width;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: width.w,
-    );
+    return SizedBox(width: width.w);
   }
 }

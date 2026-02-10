@@ -97,6 +97,5 @@ class _TermAndCondationsState extends State<TermAndCondations> {
       title: LocaleKeys.termCon2.tr(),
       position: SnackBarPosition.bottom,
     );
-
   }
 }

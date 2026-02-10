@@ -4,6 +4,8 @@
   "password": "Password",
   "login": "Login",
   "forgotPassword": "Forgot Password?",
+  "loginSuccessful": "Login Successful",
+  "loginFailed": "Login Failed",
   "dontHaveAccount1": "Don't have an account?",
   "dontHaveAccount2": "Sign Up",
   "or": "Or",

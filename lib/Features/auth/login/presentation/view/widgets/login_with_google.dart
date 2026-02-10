@@ -42,8 +42,7 @@ class _LoginWithGoogleState extends State<LoginWithGoogle> {
       onTapDown: onTapDown,
       onTapUp: onTapUp,
       onTapCancel: onTapCancel,
-      onTap: () {
-      },
+      onTap: () {},
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 150),
         height: 56.h,
@@ -56,8 +55,8 @@ class _LoginWithGoogleState extends State<LoginWithGoogle> {
               ? []
               : [
                   BoxShadow(
-                    color: AppColors.blackColor.withValues(alpha: 0.1),
-                    blurRadius: 10,
+                    color: AppColors.greyColor.withValues(alpha: 0.1),
+                    blurRadius: 2,
                     offset: const Offset(0, 4),
                   ),
                 ],

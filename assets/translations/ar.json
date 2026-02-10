@@ -3,6 +3,8 @@
   "email": "البريد الإلكتروني",
   "password": "كلمة السر",
   "login": "سجّل دخول",
+  "loginSuccessful": "تم تسجيل الدخول بنجاح",
+  "loginFailed": "فشل تسجيل الدخول",
   "forgotPassword": "نسيت كلمة السر؟",
   "dontHaveAccount1": "ليس لديك حساب؟",
   "dontHaveAccount2": "اعمل حساب جديد",

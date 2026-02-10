@@ -33,17 +33,17 @@ class CustomButtonWidget extends StatelessWidget {
   final Color? borderSideColor;
   final String? title;
   final TextStyle? titleStyle;
-  
+
   final IconData? prefixIcon;
   final Color? prefixIconColor;
   final double? prefixIconSize;
   final IconData? suffixIcon;
   final Color? suffixIconColor;
   final double? suffixIconSize;
-  
+
   final String? prefixSvgIcon;
   final String? suffixSvgIcon;
-  
+
   final double? borderRadiusButton;
   final double? borderSideWidth;
   final double buttonWidth;
@@ -81,12 +81,13 @@ class CustomButtonWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             buildPrefixIcon(),
-                        if (prefixIcon != null || prefixSvgIcon != null)
+            if (prefixIcon != null || prefixSvgIcon != null)
               SizedBox(width: 8.w),
-            
+
             Expanded(
               child: Center(
-                child: child ??
+                child:
+                    child ??
                     Text(
                       title ?? "",
                       textAlign: TextAlign.center,
@@ -94,7 +95,7 @@ class CustomButtonWidget extends StatelessWidget {
                     ),
               ),
             ),
-            
+
             if (suffixIcon != null || suffixSvgIcon != null)
               SizedBox(width: 8.w),
             buildSuffixIcon(),
@@ -111,10 +112,7 @@ class CustomButtonWidget extends StatelessWidget {
         width: prefixIconSize?.w ?? 24.w,
         height: prefixIconSize?.h ?? 24.h,
         colorFilter: prefixIconColor != null
-            ? ColorFilter.mode(
-                prefixIconColor!,
-                BlendMode.srcIn,
-              )
+            ? ColorFilter.mode(prefixIconColor!, BlendMode.srcIn)
             : null,
       );
     } else if (prefixIcon != null) {
@@ -134,10 +132,7 @@ class CustomButtonWidget extends StatelessWidget {
         width: suffixIconSize?.w ?? 24.w,
         height: suffixIconSize?.h ?? 24.h,
         colorFilter: suffixIconColor != null
-            ? ColorFilter.mode(
-                suffixIconColor!,
-                BlendMode.srcIn,
-              )
+            ? ColorFilter.mode(suffixIconColor!, BlendMode.srcIn)
             : null,
       );
     } else if (suffixIcon != null) {

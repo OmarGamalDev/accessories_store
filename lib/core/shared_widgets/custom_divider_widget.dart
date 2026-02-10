@@ -3,7 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomDividerWidget extends StatelessWidget {
-  const CustomDividerWidget({super.key, this.dividerColor, this.thickness, this.indent, this.endIndent, this.radius});
+  const CustomDividerWidget({
+    super.key,
+    this.dividerColor,
+    this.thickness,
+    this.indent,
+    this.endIndent,
+    this.radius,
+  });
   final Color? dividerColor;
   final double? thickness;
   final double? indent;
@@ -16,7 +23,7 @@ class CustomDividerWidget extends StatelessWidget {
       thickness: thickness?.w ?? 1.w,
       indent: indent?.w,
       endIndent: endIndent?.w,
-      radius: BorderRadius.circular(radius??0),
+      radius: BorderRadius.circular(radius ?? 0),
     );
   }
 }
