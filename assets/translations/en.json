@@ -32,6 +32,7 @@
   "verifyBody": "Enter the code we sent to your email address",
   "verifyButton": "Verify Code",
   "verifyAgain": "Resend Code",
+  "codeVerificationSuccess": "Your code has been verified successfully",
   "newPassAppbar": "New Password",
   "newPassButton": "Change Password",
   "newPassBody": "Create a new password to log in",
@@ -129,5 +130,7 @@
   "warning": "Warning!",
   "info": "Info!",
   "reload": "Reload",
-  "get_started": "Get Started"
+  "get_started": "Get Started",
+  "clickToResend":"Click to resend",
+  "second":"s"
 }

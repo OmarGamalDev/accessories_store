@@ -31,6 +31,7 @@
   "verifyAppbar": "تأكيد البريد",
   "verifyBody": "اكتب الكود اللي بعتناه على",
   "verifyButton": "تأكيد الكود",
+  "codeVerificationSuccess": "✅ تم التحقق بنجاح!",
   "verifyAgain": "ابعت الكود تاني",
   "newPassAppbar": "كلمة سر جديدة",
   "newPassButton": "غيّر كلمة السر",
@@ -129,5 +130,7 @@
   "warning": "تحذير!",
   "info": "معلومه!",
   "reload": "إعادة تحميل",
-  "get_started": "ابدأ"
+  "get_started": "ابدأ",
+  "clickToResend":"انقر لاعادة الارسال",
+  "second":"ث"
 }
