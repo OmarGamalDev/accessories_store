@@ -1,8 +1,4 @@
-import 'package:accessories_store/core/shared_widgets/custom_button_widget.dart';
 import 'package:accessories_store/core/shared_widgets/custom_spacing_widget.dart';
-import 'package:accessories_store/core/shared_widgets/custom_text_button_widget.dart';
-import 'package:accessories_store/core/utils/app_colors.dart';
-import 'package:accessories_store/core/utils/app_text_style.dart';
 import 'package:accessories_store/features/auth/verify_otp/presentation/view/widgets/pin_widget_code.dart';
 import 'package:accessories_store/features/auth/verify_otp/presentation/view/widgets/resend_otp_button.dart';
 import 'package:accessories_store/features/auth/verify_otp/presentation/view/widgets/rich_widget_text.dart';
@@ -11,7 +7,6 @@ import 'package:accessories_store/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 
 class VerifyOtpBody extends StatefulWidget {
   const VerifyOtpBody({super.key, required this.email});
