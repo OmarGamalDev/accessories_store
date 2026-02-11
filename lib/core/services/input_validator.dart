@@ -93,4 +93,21 @@ class Validators {
 
     return null;
   }
+  static String? validateOtp(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'OTP is required';
+    }
+
+    final otpRegex = RegExp(r'^\d{6}$');
+
+    if (!otpRegex.hasMatch(value)) {
+      return 'Enter a valid OTP (6 digits)';
+    }
+
+    if (value.length != 6) {
+      return 'OTP must be 6 digits';
+    }
+
+    return null;
+  }
 }

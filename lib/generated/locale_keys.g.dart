@@ -37,6 +37,7 @@ abstract class  LocaleKeys {
   static const verifyBody = 'verifyBody';
   static const verifyButton = 'verifyButton';
   static const verifyAgain = 'verifyAgain';
+  static const codeVerificationSuccess = 'codeVerificationSuccess';
   static const newPassAppbar = 'newPassAppbar';
   static const newPassButton = 'newPassButton';
   static const newPassBody = 'newPassBody';
@@ -135,5 +136,6 @@ abstract class  LocaleKeys {
   static const info = 'info';
   static const reload = 'reload';
   static const get_started = 'get_started';
-
+  static const clickToResend = 'clickToResend';
+  static const second = 'second';
 }

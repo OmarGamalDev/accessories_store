@@ -49,6 +49,7 @@ class CodegenLoader extends AssetLoader{
   "verifyBody": "اكتب الكود اللي بعتناه على",
   "verifyButton": "تأكيد الكود",
   "verifyAgain": "ابعت الكود تاني",
+  "codeVerificationSuccess": "✅ تم التحقق بنجاح!",
   "newPassAppbar": "كلمة سر جديدة",
   "newPassButton": "غيّر كلمة السر",
   "newPassBody": "اكتب كلمة سر جديدة عشان تقدر تدخل",
@@ -144,7 +145,9 @@ class CodegenLoader extends AssetLoader{
   "warning": "تحذير!",
   "info": "معلومه!",
   "reload": "إعادة تحميل",
-  "get_started": "ابدأ"
+  "get_started": "ابدأ",
+  "clickToResend":"انقر لاعادة الارسال",
+  "second":"ث"
 };
 static const Map<String,dynamic> _en = {
   "appName": "AccessoriesStore",
@@ -181,6 +184,7 @@ static const Map<String,dynamic> _en = {
   "verifyBody": "Enter the code we sent to your email address",
   "verifyButton": "Verify Code",
   "verifyAgain": "Resend Code",
+  "codeVerificationSuccess":"Your code has been verified successfully",
   "newPassAppbar": "New Password",
   "newPassButton": "Change Password",
   "newPassBody": "Create a new password to log in",
@@ -276,7 +280,9 @@ static const Map<String,dynamic> _en = {
   "warning": "Warning!",
   "info": "Info!",
   "reload": "Reload",
-  "get_started": "Get Started"
+  "get_started": "Get Started",
+  "clickToResend":"Click to resend",
+  "second":"s"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};
 }

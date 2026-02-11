@@ -24,7 +24,7 @@ class VerifyEmailButton extends StatelessWidget {
         }
         else if (state is ForgotPasswordSuccessState) {
           CustomAnimatedShowSnackBar.successSnackBar(context: context, message: LocaleKeys.sentOtpSuccess.tr());
-          context.pushNamed(AppRoutes.verifyOtpScreen);
+          context.pushNamed(AppRoutes.verifyOtpScreen,extra: emailController.text.trim());
         }
         
       },
