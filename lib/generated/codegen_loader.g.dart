@@ -6,7 +6,7 @@ import 'dart:ui';
 
 import 'package:easy_localization/easy_localization.dart' show AssetLoader;
 
-class CodegenLoader extends AssetLoader {
+class CodegenLoader extends AssetLoader{
   const CodegenLoader();
 
   @override
@@ -19,6 +19,9 @@ class CodegenLoader extends AssetLoader {
   "email": "البريد الإلكتروني",
   "password": "كلمة السر",
   "login": "سجّل دخول",
+  "loginSuccessful": "تم تسجيل الدخول بنجاح",
+  "registrationSuccessful": "تم انشاء الحساب بنجاح",
+  "loginFailed": "فشل تسجيل الدخول",
   "forgotPassword": "نسيت كلمة السر؟",
   "dontHaveAccount1": "ليس لديك حساب؟",
   "dontHaveAccount2": "اعمل حساب جديد",
@@ -33,7 +36,9 @@ class CodegenLoader extends AssetLoader {
   "firstName": "الاسم الأول",
   "lastName": "اسم العيلة",
   "termCon1": "لما تعمل حساب، انت كدا موافق على",
-  "termCon2": "الشروط والأحكام بتاعتنا",
+  "termCon2": "الشروط",
+  "termCon3": " والأحكام الخاصه بنا",
+  "termCon4": "صفحة الشروط والأحكام هتكون متاحة قريبًا!",
   "allreadyhaveAccount": "عندك حساب قبل كدا؟",
   "signupSuccess": "تم انشاء الحساب بنجاح",
   "notAvailable": "مش متوفر دلوقتي",
@@ -125,8 +130,6 @@ class CodegenLoader extends AssetLoader {
   "personalInfo": "بياناتي الشخصية",
   "noInternet": "الاتصال فصل",
   "noInternet2": "في مشكلة في الشبكة، حاول تتأكد منها وجرب تاني",
-  "errorMessage":"حدث خطاء , حاول تاني",
-  "sentOtpSuccess":"تم ارسال الكود بنجاح",
   "tryAgain": "حاول تاني",
   "orderSuccess": "طلبك اتسجل بنجاح",
   "orderSuccess2": "دلوقتي تقدر تتابع طلبك خطوة بخطوة",
@@ -152,6 +155,9 @@ static const Map<String,dynamic> _en = {
   "password": "Password",
   "login": "Login",
   "forgotPassword": "Forgot Password?",
+  "loginSuccessful": "Login Successful",
+  "registrationSuccessful": "Account created successfully",
+  "loginFailed": "Login Failed",
   "dontHaveAccount1": "Don't have an account?",
   "dontHaveAccount2": "Sign Up",
   "or": "Or",
@@ -166,7 +172,9 @@ static const Map<String,dynamic> _en = {
   "lastName": "Last Name",
   "notAvailable": "Not Available Now",
   "termCon1": "By creating an account, you agree to",
-  "termCon2": "Terms & Conditions",
+  "termCon2": "Terms",
+  "termCon3": "and Conditions of Use",
+  "termCon4": "Terms & Conditions page coming soon!",
   "allreadyhaveAccount": "Already have an account?",
   "signupSuccess": "Account created successfully",
   "forgetPassAppbar": "Forget Password",
@@ -257,8 +265,6 @@ static const Map<String,dynamic> _en = {
   "personalInfo": "Personal Info",
   "noInternet": "No Internet Connection",
   "noInternet2": "The connection to the server has been lost. Please check your internet connection and try again",
-  "errorMessage":"Something went wrong , please try again",
-  "sentOtpSuccess":"Otp has been sent successfully",
   "tryAgain": "Try Again",
   "orderSuccess": "Your order has been successfully placed",
   "orderSuccess2": "You can track your order step by step",
