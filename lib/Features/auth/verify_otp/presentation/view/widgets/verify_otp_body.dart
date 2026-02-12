@@ -20,12 +20,6 @@ class _VerifyOtpBodyState extends State<VerifyOtpBody> {
   final TextEditingController otpController = TextEditingController();
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
-  void dispose() {
-    otpController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),

@@ -66,17 +66,23 @@ class RouterGenerationConfig {
       GoRoute(
         path: AppRoutes.forgotPasswordScreen,
         name: AppRoutes.forgotPasswordScreen,
-        builder: (context, state) { 
+        builder: (context, state) {
           final String email = state.extra as String;
-          return ForgotPasswordScreen(email: email,);
-          },
+          return ForgotPasswordScreen(email: email);
+        },
       ),
 
       /// New Password
       GoRoute(
         path: AppRoutes.newPasswordScreen,
         name: AppRoutes.newPasswordScreen,
-        builder: (context, state) => NewPasswordScreen(),
+        builder: (context, state) {
+          // for send more one of variable
+          final data = state.extra as Map<String, dynamic>;
+          final String email = data["email"];
+          final String otp = data["otp"];
+          return NewPasswordScreen(email: email, otp: otp);
+        },
       ),
 
       /// verify Otp
@@ -85,8 +91,8 @@ class RouterGenerationConfig {
         name: AppRoutes.verifyOtpScreen,
         builder: (context, state) {
           final String email = state.extra as String;
-          return VerifyOtpScreen(email: email,);
-          },
+          return VerifyOtpScreen(email: email);
+        },
       ),
 
       /// About Us

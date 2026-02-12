@@ -4,7 +4,7 @@ class Assets {
 
   static const String imagesAccessoriesStoreLogo =
       'assets/images/accessories_store_logo.png';
-  static const String lottiesDoneCorrect = 'assets/lotties/done_correct.json';
+  static const String lottiesDoneCorrect = 'assets/lotties/Done_Correct_Tick.json';
   static const String svgCart = 'assets/svg/cart.svg';
   static const String svgDelivered = 'assets/svg/delivered.svg';
   static const String svgGoogle = 'assets/svg/google.svg';

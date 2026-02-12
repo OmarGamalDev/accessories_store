@@ -37,7 +37,7 @@
   "newPassAppbar": "New Password",
   "newPassButton": "Change Password",
   "newPassBody": "Create a new password to log in",
-  "confirmPass": "Confirm ",
+  "confirmPass": "Confirm Password",
   "newPassDone": "Password changed successfully",
   "homeHello": "Good Morning !..",
   "searchHint": "Search.......",
@@ -133,5 +133,6 @@
   "reload": "Reload",
   "get_started": "Get Started",
   "clickToResend":"Click to resend",
-  "second":"s"
+  "second":"s",
+  "resetPassword":"Reset Password"
 }

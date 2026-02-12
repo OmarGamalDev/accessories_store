@@ -53,7 +53,7 @@ class CodegenLoader extends AssetLoader{
   "newPassAppbar": "كلمة سر جديدة",
   "newPassButton": "غيّر كلمة السر",
   "newPassBody": "اكتب كلمة سر جديدة عشان تقدر تدخل",
-  "confirmPass": "أكد كلمة السر",
+  "confirmPass": "تأكد كلمة السر",
   "newPassDone": "تم تغيير كلمة السر بنجاح",
   "homeHello": "صباح الخير!..",
   "searchHint": "دور على اللي انت عايزه...",
@@ -147,7 +147,8 @@ class CodegenLoader extends AssetLoader{
   "reload": "إعادة تحميل",
   "get_started": "ابدأ",
   "clickToResend":"انقر لاعادة الارسال",
-  "second":"ث"
+  "second":"ث",
+  "resetPassword":"تعيين كلمة المرور"
 };
 static const Map<String,dynamic> _en = {
   "appName": "AccessoriesStore",
@@ -188,7 +189,7 @@ static const Map<String,dynamic> _en = {
   "newPassAppbar": "New Password",
   "newPassButton": "Change Password",
   "newPassBody": "Create a new password to log in",
-  "confirmPass": "Confirm ",
+  "confirmPass": "Confirm Password",
   "newPassDone": "Password changed successfully",
   "homeHello": "Good Morning !..",
   "searchHint": "Search.......",
@@ -282,7 +283,8 @@ static const Map<String,dynamic> _en = {
   "reload": "Reload",
   "get_started": "Get Started",
   "clickToResend":"Click to resend",
-  "second":"s"
+  "second":"s",
+  "resetPassword":"Reset Password"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};
 }

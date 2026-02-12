@@ -37,7 +37,7 @@
   "newPassAppbar": "كلمة سر جديدة",
   "newPassButton": "غيّر كلمة السر",
   "newPassBody": "اكتب كلمة سر جديدة عشان تقدر تدخل",
-  "confirmPass": "أكد كلمة السر",
+  "confirmPass": "تأكد كلمة السر",
   "newPassDone": "تم تغيير كلمة السر بنجاح",
   "homeHello": "صباح الخير!..",
   "searchHint": "دور على اللي انت عايزه...",
@@ -133,5 +133,6 @@
   "reload": "إعادة تحميل",
   "get_started": "ابدأ",
   "clickToResend":"انقر لاعادة الارسال",
-  "second":"ث"
+  "second":"ث",
+  "resetPassword":"تعيين كلمة المرور"
 }
