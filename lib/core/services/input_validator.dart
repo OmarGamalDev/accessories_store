@@ -1,7 +1,10 @@
+import 'package:accessories_store/generated/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
+
 class Validators {
   static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Email is required';
+      return LocaleKeys.emailRequired.tr();
     }
 
     final emailRegex = RegExp(
@@ -10,7 +13,7 @@ class Validators {
     );
 
     if (!emailRegex.hasMatch(value)) {
-      return 'Enter a valid email (e.g., user@example.com)';
+      return LocaleKeys.emailInvalid.tr();
     }
 
     return null;
@@ -18,23 +21,23 @@ class Validators {
 
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Password is required';
+      return LocaleKeys.passwordRequired.tr();
     }
 
     if (value.length < 8) {
-      return 'Password must be at least 8 characters';
+      return LocaleKeys.passwordMinLength.tr();
     }
 
     if (!RegExp(r'[A-Z]').hasMatch(value)) {
-      return 'Password must contain at least one uppercase letter';
+      return LocaleKeys.passwordUppercase.tr();
     }
 
     if (!RegExp(r'[a-z]').hasMatch(value)) {
-      return 'Password must contain at least one lowercase letter';
+      return LocaleKeys.passwordLowercase.tr();
     }
 
     if (!RegExp(r'[0-9]').hasMatch(value)) {
-      return 'Password must contain at least one number';
+      return LocaleKeys.passwordNumber.tr();
     }
 
     return null;
@@ -45,11 +48,11 @@ class Validators {
     String? originalPassword,
   ) {
     if (value == null || value.isEmpty) {
-      return 'Retype Password is required';
+      return LocaleKeys.retypePasswordRequired.tr();
     }
 
     if (value != originalPassword) {
-      return 'Passwords do not match';
+      return LocaleKeys.passwordsNotMatch.tr();
     }
 
     final passwordValidation = validatePassword(value);
@@ -61,17 +64,17 @@ class Validators {
   static String? validateName(String? value) {
     if (value == null || value.trim().isEmpty) {
       if (value == null || value.isEmpty) {
-        return 'Name is required';
+        return LocaleKeys.nameRequired.tr();
       }
 
       final trimmedValue = value.trim();
       if (trimmedValue.length < 3) {
         if (value.length < 3) {
-          return 'Name must be at least 3 characters';
+          return LocaleKeys.nameMinLength.tr();
         }
 
         if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(trimmedValue)) {
-          return 'Name must contain only alphabets and spaces';
+          return LocaleKeys.nameInvalid.tr();
         }
 
         return null;
@@ -82,30 +85,30 @@ class Validators {
 
   static String? validatePhoneNumber(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Phone number is required';
+      return LocaleKeys.phoneRequired.tr();
     }
 
     final phoneRegex = RegExp(r'^\+?[0-9]{10,15}$');
 
     if (!phoneRegex.hasMatch(value)) {
-      return 'Enter a valid phone number (10-15 digits)';
+      return LocaleKeys.phoneInvalid.tr();
     }
 
     return null;
   }
   static String? validateOtp(String? value) {
     if (value == null || value.isEmpty) {
-      return 'OTP is required';
+      return LocaleKeys.otpRequired.tr();
     }
 
     final otpRegex = RegExp(r'^\d{6}$');
 
     if (!otpRegex.hasMatch(value)) {
-      return 'Enter a valid OTP (6 digits)';
+      return LocaleKeys.otpInvalid.tr();
     }
 
     if (value.length != 6) {
-      return 'OTP must be 6 digits';
+      return LocaleKeys.otpLength.tr();
     }
 
     return null;

@@ -78,7 +78,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     CustomTextFieldWidget(
                       controller: emailController,
                       hintText: LocaleKeys.email.tr(),
-                      prefixIcon: Icons.email_outlined,
                       keyboardType: TextInputType.emailAddress,
                       validator: Validators.validateEmail,
                     ),
@@ -86,7 +85,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     CustomTextFieldWidget(
                       controller: passwordController,
                       hintText: LocaleKeys.password.tr(),
-                      prefixIcon: Icons.lock_outline,
                       obscureText: !isPasswordVisible,
                       suffixIcon: isPasswordVisible
                           ? Icons.visibility_outlined
@@ -129,7 +127,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     const CustomHeightSpacingWidget(height: 37),
                     const OrWidget(),
                     const CustomHeightSpacingWidget(height: 16),
-                    const LoginWithGoogle(),                
+                    const LoginWithGoogle(),
                   ],
                 ),
               ),
