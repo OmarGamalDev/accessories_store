@@ -3,6 +3,7 @@ import 'package:accessories_store/Features/auth/login/presentation/view/widgets/
 import 'package:accessories_store/Features/auth/login/presentation/view/widgets/login_with_google.dart';
 import 'package:accessories_store/Features/auth/login/presentation/view/widgets/or_widget.dart';
 import 'package:accessories_store/core/methods/custom_animated_snack_bar.dart';
+import 'package:accessories_store/core/routes/app_routes.dart';
 import 'package:accessories_store/core/services/input_validator.dart';
 import 'package:accessories_store/core/shared_widgets/custom_button_widget.dart';
 import 'package:accessories_store/core/shared_widgets/custom_loading_widget.dart';
@@ -16,6 +17,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
@@ -48,12 +50,17 @@ class _LoginViewBodyState extends State<LoginViewBody> {
             message: LocaleKeys.loginSuccessful.tr(),
             context: context,
           );
+          Future.delayed(const Duration(milliseconds: 500), () {
+            if (context.mounted) {
+              GoRouter.of(context).pushReplacement(AppRoutes.mainLayoutScreen);
+            }
+          });
         } else if (state is LoginError) {
           CustomAnimatedShowSnackBar.failureSnackBar(
             message: state.message,
             context: context,
           );
-        } else {}
+        }
       },
       builder: (context, state) {
         final isLoading = state is LoginLoading;

@@ -3,6 +3,7 @@ import 'package:accessories_store/Features/auth/register/presentation/view/widge
 import 'package:accessories_store/Features/auth/register/presentation/view/widgets/term_and_condations.dart';
 import 'package:accessories_store/core/methods/app_snack_bar.dart';
 import 'package:accessories_store/core/methods/custom_animated_snack_bar.dart';
+import 'package:accessories_store/core/routes/app_routes.dart';
 import 'package:accessories_store/core/services/input_validator.dart';
 import 'package:accessories_store/core/shared_widgets/custom_button_widget.dart';
 import 'package:accessories_store/core/shared_widgets/custom_loading_widget.dart';
@@ -15,6 +16,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class RegisterViewBody extends StatefulWidget {
   const RegisterViewBody({super.key});
@@ -53,6 +55,11 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
             message: state.message,
             context: context,
           );
+          Future.delayed(const Duration(milliseconds: 500), () {
+            if (context.mounted) {
+              GoRouter.of(context).pushReplacement(AppRoutes.mainLayoutScreen);
+            }
+          });
         } else if (state is RegisterError) {
           CustomAnimatedShowSnackBar.failureSnackBar(
             message: state.message,
