@@ -3,10 +3,12 @@ class EndPoint {
   static String register = "api/auth/register";
   static String createUser = "api/auth/register";
   static String verifyEmail = "api/auth/verify-email";
+  static String verifyOtp = "api/auth/validate-otp";
   static String login = "api/auth/login";
   static String refreshToken = "api/auth/refresh-token";
   static String forgotPassword = "api/auth/forgot-password";
   static String loginWithGoogle = "api/auth/google/login";
+  static String resendOtp = "api/auth/resend-otp";
 }
 
 class ApiKey {

@@ -83,7 +83,6 @@ class CustomButtonWidget extends StatelessWidget {
             buildPrefixIcon(),
             if (prefixIcon != null || prefixSvgIcon != null)
               SizedBox(width: 8.w),
-
             Expanded(
               child: Center(
                 child:

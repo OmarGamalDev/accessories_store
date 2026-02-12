@@ -83,7 +83,10 @@ class RouterGenerationConfig {
       GoRoute(
         path: AppRoutes.verifyOtpScreen,
         name: AppRoutes.verifyOtpScreen,
-        builder: (context, state) => VerifyOtpScreen(),
+        builder: (context, state) {
+          final String email = state.extra as String;
+          return VerifyOtpScreen(email: email,);
+          },
       ),
 
       /// About Us
