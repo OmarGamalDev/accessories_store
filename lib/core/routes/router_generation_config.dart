@@ -66,10 +66,10 @@ class RouterGenerationConfig {
       GoRoute(
         path: AppRoutes.forgotPasswordScreen,
         name: AppRoutes.forgotPasswordScreen,
-        builder: (context, state) { 
-          final String email = state.extra as String;
-          return ForgotPasswordScreen(email: email,);
-          },
+        builder: (context, state) {
+          final String email = (state.extra as String?) ?? '';
+          return ForgotPasswordScreen(email: email);
+        },
       ),
 
       /// New Password
