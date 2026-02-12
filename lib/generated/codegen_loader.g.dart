@@ -288,9 +288,7 @@ static const Map<String,dynamic> _en = {
   "get_started": "Get Started",
   "clickToResend":"Click to resend",
   "second":"s",
-  "resetPassword":"Reset Password"
-  "clickToResend": "Click to resend",
-  "second": "s",
+  "resetPassword":"Reset Password",
   "emailRequired": "Email is required",
   "emailInvalid": "Enter a valid email (e.g., user@example.com)",
   "passwordRequired": "Password is required",
