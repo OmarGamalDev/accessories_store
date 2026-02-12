@@ -134,5 +134,22 @@
   "get_started": "ابدأ",
   "clickToResend":"انقر لاعادة الارسال",
   "second":"ث",
-  "resetPassword":"تعيين كلمة المرور"
+  "resetPassword":"تعيين كلمة المرور",
+  "emailRequired": "البريد الإلكتروني مطلوب",
+  "emailInvalid": "أدخل بريدًا إلكترونيًا صالحًا (مثل: user@example.com)",
+  "passwordRequired": "كلمة المرور مطلوبة",
+  "passwordMinLength": "يجب أن تكون كلمة المرور 8 أحرف على الأقل",
+  "passwordUppercase": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+  "passwordLowercase": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+  "passwordNumber": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+  "retypePasswordRequired": "إعادة كتابة كلمة المرور مطلوبة",
+  "passwordsNotMatch": "كلمات المرور غير متطابقة",
+  "nameRequired": "الاسم مطلوب",
+  "nameMinLength": "يجب أن يكون الاسم 3 أحرف على الأقل",
+  "nameInvalid": "الاسم يجب أن يحتوي على أحرف وأرقام فقط",
+  "phoneRequired": "رقم الهاتف مطلوب",
+  "phoneInvalid": "أدخل رقم هاتف صالح (10-15 رقم)",
+  "otpRequired": "OTP مطلوب",
+  "otpInvalid": "أدخل OTP صالح (6 أرقام)",
+  "otpLength": "يجب أن يكون OTP 6 أرقام"
 }
