@@ -138,6 +138,7 @@ abstract class  LocaleKeys {
   static const get_started = 'get_started';
   static const clickToResend = 'clickToResend';
   static const second = 'second';
+  static const resetPassword = 'resetPassword';
   static const emailRequired = 'emailRequired';
   static const emailInvalid = 'emailInvalid';
   static const passwordRequired = 'passwordRequired';

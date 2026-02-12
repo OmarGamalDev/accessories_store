@@ -9,6 +9,7 @@ class EndPoint {
   static String forgotPassword = "api/auth/forgot-password";
   static String loginWithGoogle = "api/auth/google/login";
   static String resendOtp = "api/auth/resend-otp";
+  static String resetPassword = "api/auth/reset-password";
 }
 
 class ApiKey {
