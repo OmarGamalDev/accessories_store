@@ -1,3 +1,4 @@
+import 'package:accessories_store/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -5,6 +6,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text("Home Screen")));
+    return Scaffold(
+      backgroundColor: AppColors.whiteColor,
+      body: Center(child: Text("Home Screen")),
+    );
   }
 }

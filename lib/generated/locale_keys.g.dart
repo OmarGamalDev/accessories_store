@@ -36,8 +36,8 @@ abstract class  LocaleKeys {
   static const verifyAppbar = 'verifyAppbar';
   static const verifyBody = 'verifyBody';
   static const verifyButton = 'verifyButton';
-  static const verifyAgain = 'verifyAgain';
   static const codeVerificationSuccess = 'codeVerificationSuccess';
+  static const verifyAgain = 'verifyAgain';
   static const newPassAppbar = 'newPassAppbar';
   static const newPassButton = 'newPassButton';
   static const newPassBody = 'newPassBody';
@@ -139,4 +139,22 @@ abstract class  LocaleKeys {
   static const clickToResend = 'clickToResend';
   static const second = 'second';
   static const resetPassword = 'resetPassword';
+  static const emailRequired = 'emailRequired';
+  static const emailInvalid = 'emailInvalid';
+  static const passwordRequired = 'passwordRequired';
+  static const passwordMinLength = 'passwordMinLength';
+  static const passwordUppercase = 'passwordUppercase';
+  static const passwordLowercase = 'passwordLowercase';
+  static const passwordNumber = 'passwordNumber';
+  static const retypePasswordRequired = 'retypePasswordRequired';
+  static const passwordsNotMatch = 'passwordsNotMatch';
+  static const nameRequired = 'nameRequired';
+  static const nameMinLength = 'nameMinLength';
+  static const nameInvalid = 'nameInvalid';
+  static const phoneRequired = 'phoneRequired';
+  static const phoneInvalid = 'phoneInvalid';
+  static const otpRequired = 'otpRequired';
+  static const otpInvalid = 'otpInvalid';
+  static const otpLength = 'otpLength';
+
 }

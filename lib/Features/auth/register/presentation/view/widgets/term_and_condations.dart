@@ -1,4 +1,3 @@
-import 'package:accessories_store/core/methods/app_snack_bar.dart';
 import 'package:accessories_store/core/utils/app_colors.dart';
 import 'package:accessories_store/core/utils/app_text_style.dart';
 import 'package:accessories_store/generated/locale_keys.g.dart';
@@ -59,25 +58,13 @@ class _TermAndCondationsState extends State<TermAndCondations> {
                   ),
                   TextSpan(
                     text: LocaleKeys.termCon2.tr(),
-                    style: AppTextStyle.primaryW700S13lightGreenColor.copyWith(
-                      decoration: TextDecoration.underline,
-                      decorationColor: AppColors.primaryColor,
-                    ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        navigateToTerms(context);
-                      },
+                    style: AppTextStyle.primaryW700S13lightGreenColor,
+                    recognizer: TapGestureRecognizer(),
                   ),
                   TextSpan(
                     text: ' ${LocaleKeys.termCon3.tr()}',
-                    style: AppTextStyle.primaryW700S13lightGreenColor.copyWith(
-                      decoration: TextDecoration.underline,
-                      decorationColor: AppColors.primaryColor,
-                    ),
-                    recognizer: TapGestureRecognizer()
-                      ..onTap = () {
-                        navigateToTerms(context);
-                      },
+                    style: AppTextStyle.primaryW700S13lightGreenColor,
+                    recognizer: TapGestureRecognizer(),
                   ),
                 ],
               ),
@@ -90,12 +77,12 @@ class _TermAndCondationsState extends State<TermAndCondations> {
     );
   }
 
-  void navigateToTerms(BuildContext context) {
-    AppSnackBar.showInfo(
-      message: LocaleKeys.termCon4.tr(),
-      context: context,
-      title: LocaleKeys.termCon2.tr(),
-      position: SnackBarPosition.bottom,
-    );
-  }
+  // void navigateToTerms(BuildContext context) {
+  //   AppSnackBar.showInfo(
+  //     message: LocaleKeys.termCon4.tr(),
+  //     context: context,
+  //     title: LocaleKeys.termCon2.tr(),
+  //     position: SnackBarPosition.bottom,
+  //   );
+  // }
 }

@@ -1,9 +1,9 @@
 import 'package:accessories_store/Features/auth/login/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:accessories_store/Features/auth/login/presentation/view/widgets/donot_have_account.dart';
-import 'package:accessories_store/features/auth/login/presentation/view/widgets/forget_password_widget.dart';
 import 'package:accessories_store/Features/auth/login/presentation/view/widgets/login_with_google.dart';
 import 'package:accessories_store/Features/auth/login/presentation/view/widgets/or_widget.dart';
-import 'package:accessories_store/core/methods/app_snack_bar.dart';
+import 'package:accessories_store/core/methods/custom_animated_snack_bar.dart';
+import 'package:accessories_store/core/routes/app_routes.dart';
 import 'package:accessories_store/core/services/input_validator.dart';
 import 'package:accessories_store/core/shared_widgets/custom_button_widget.dart';
 import 'package:accessories_store/core/shared_widgets/custom_loading_widget.dart';
@@ -11,11 +11,13 @@ import 'package:accessories_store/core/shared_widgets/custom_spacing_widget.dart
 import 'package:accessories_store/core/shared_widgets/custom_text_field_widget.dart';
 import 'package:accessories_store/core/utils/app_colors.dart';
 import 'package:accessories_store/core/utils/app_text_style.dart';
+import 'package:accessories_store/features/auth/login/presentation/view/widgets/forget_password_widget.dart';
 import 'package:accessories_store/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
@@ -35,7 +37,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
 
   @override
   void dispose() {
-    emailController.dispose();
     passwordController.dispose();
     super.dispose();
   }
@@ -45,23 +46,24 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
-          AppSnackBar.showSuccess(
+          CustomAnimatedShowSnackBar.successSnackBar(
             message: LocaleKeys.loginSuccessful.tr(),
             context: context,
-            position: SnackBarPosition.bottom,
           );
+          Future.delayed(const Duration(milliseconds: 500), () {
+            if (context.mounted) {
+              GoRouter.of(context).pushReplacement(AppRoutes.mainLayoutScreen);
+            }
+          });
         } else if (state is LoginError) {
-          AppSnackBar.showError(
-            title: LocaleKeys.loginFailed.tr(),
+          CustomAnimatedShowSnackBar.failureSnackBar(
             message: state.message,
             context: context,
-            position: SnackBarPosition.bottom
           );
-        } else {}
+        }
       },
       builder: (context, state) {
         final isLoading = state is LoginLoading;
-
         return SingleChildScrollView(
           child: SafeArea(
             child: Padding(
@@ -79,7 +81,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     CustomTextFieldWidget(
                       controller: emailController,
                       hintText: LocaleKeys.email.tr(),
-                      prefixIcon: Icons.email_outlined,
                       keyboardType: TextInputType.emailAddress,
                       validator: Validators.validateEmail,
                     ),
@@ -87,7 +88,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     CustomTextFieldWidget(
                       controller: passwordController,
                       hintText: LocaleKeys.password.tr(),
-                      prefixIcon: Icons.lock_outline,
                       obscureText: !isPasswordVisible,
                       suffixIcon: isPasswordVisible
                           ? Icons.visibility_outlined
@@ -102,17 +102,27 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       validator: Validators.validatePassword,
                     ),
                     const CustomHeightSpacingWidget(height: 16),
-                     ForgetPasswordWidget(email:emailController.text.trim()),
+                    ForgetPasswordWidget(email: emailController.text.trim()),
                     const CustomHeightSpacingWidget(height: 33),
                     CustomButtonWidget(
                       title: isLoading ? '' : LocaleKeys.login.tr(),
                       titleStyle: AppTextStyle.whiteW700S16,
-                      buttonColor: isLoading ? AppColors.borderTextFieldColor :AppColors.primaryColor,
+                      buttonColor: isLoading
+                          ? AppColors.borderTextFieldColor
+                          : AppColors.primaryColor,
                       buttonWidth: double.infinity,
-                      borderSideColor: isLoading ? AppColors.borderTextFieldColor :AppColors.primaryColor,
+                      borderSideColor: isLoading
+                          ? AppColors.borderTextFieldColor
+                          : AppColors.primaryColor,
                       onPressed: isLoading ? null : handleLogin,
                       child: isLoading
-                          ? CustomLoadingWidget(color: AppColors.whiteColor,strokeAlign: -1,strokeWidth: 2,cicleHeight: 25,cicleWidth: 25,)
+                          ? CustomLoadingWidget(
+                              color: AppColors.whiteColor,
+                              strokeAlign: -1,
+                              strokeWidth: 2,
+                              cicleHeight: 25,
+                              cicleWidth: 25,
+                            )
                           : null,
                     ),
                     const CustomHeightSpacingWidget(height: 26),

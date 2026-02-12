@@ -26,9 +26,7 @@ class DonotHaveAccount extends StatelessWidget {
           ),
           child: Text(
             LocaleKeys.dontHaveAccount2.tr(),
-            style: AppTextStyle.primaryW600S16.copyWith(
-              decoration: TextDecoration.underline,
-            ),
+            style: AppTextStyle.primaryW600S16,
           ),
         ),
       ],

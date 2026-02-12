@@ -1,5 +1,6 @@
 import 'package:accessories_store/Features/auth/login/presentation/view/login_view.dart';
 import 'package:accessories_store/Features/auth/register/presentation/view/register_view.dart';
+import 'package:accessories_store/Features/main_layout/main_layout_screen.dart';
 import 'package:accessories_store/Features/onboarding/presentation/views/on_boarding_view.dart';
 import 'package:accessories_store/Features/splash/presentation/view/splash_view.dart';
 import 'package:accessories_store/core/routes/app_routes.dart';
@@ -68,6 +69,7 @@ class RouterGenerationConfig {
         name: AppRoutes.forgotPasswordScreen,
         builder: (context, state) {
           final String email = state.extra as String;
+          final String email = (state.extra as String?) ?? '';
           return ForgotPasswordScreen(email: email);
         },
       ),
@@ -93,6 +95,13 @@ class RouterGenerationConfig {
           final String email = state.extra as String;
           return VerifyOtpScreen(email: email);
         },
+      ),
+
+      /// Main Layout (Home with BottomNavBar)
+      GoRoute(
+        path: AppRoutes.mainLayoutScreen,
+        name: AppRoutes.mainLayoutScreen,
+        builder: (context, state) => const MainLayoutScreen(),
       ),
 
       /// About Us

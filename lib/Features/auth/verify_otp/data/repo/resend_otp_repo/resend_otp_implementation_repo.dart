@@ -7,19 +7,21 @@ import 'package:accessories_store/generated/locale_keys.g.dart';
 import 'package:dartz/dartz.dart';
 import 'package:easy_localization/easy_localization.dart';
 
-class ResendOtpImplementationRepo implements ResendOtpRepo{
+class ResendOtpImplementationRepo implements ResendOtpRepo {
   final ApiConsumer apiConsumer;
 
   ResendOtpImplementationRepo({required this.apiConsumer});
   @override
-
-  Future<Either<Failure, String>> resendOtp({required String email}) async{
-    try{
-      final response = await apiConsumer.post(EndPoint.resendOtp,data: {"email":email});
+  Future<Either<Failure, String>> resendOtp({required String email}) async {
+    try {
+      final response = await apiConsumer.post(
+        EndPoint.resendOtp,
+        data: {"email": email},
+      );
       return Right(response.toString());
-    }on ServerException catch(e){
+    } on ServerException {
       return Left(ServerFailure(LocaleKeys.errorMessage.tr()));
-    }catch(e){
+    } catch (e) {
       return Left(ServerFailure(LocaleKeys.errorMessage.tr()));
     }
   }

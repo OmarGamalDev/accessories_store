@@ -15,7 +15,8 @@ class EndPoint {
 class ApiKey {
   static const String statusCode = "statusCode";
   static const String message = "message";
-  static const String fullName = "fullname";
+  static const String firstName = "firstName";
+  static const String lastName = "lastName";
   static const String email = "email";
   static const String username = "username";
   static const String phone = "phone";
