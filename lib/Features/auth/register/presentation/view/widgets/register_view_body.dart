@@ -2,6 +2,7 @@ import 'package:accessories_store/Features/auth/register/presentation/manager/re
 import 'package:accessories_store/Features/auth/register/presentation/view/widgets/already_have_account.dart';
 import 'package:accessories_store/Features/auth/register/presentation/view/widgets/term_and_condations.dart';
 import 'package:accessories_store/core/methods/app_snack_bar.dart';
+import 'package:accessories_store/core/methods/custom_animated_snack_bar.dart';
 import 'package:accessories_store/core/services/input_validator.dart';
 import 'package:accessories_store/core/shared_widgets/custom_button_widget.dart';
 import 'package:accessories_store/core/shared_widgets/custom_loading_widget.dart';
@@ -48,9 +49,15 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
       listener: (context, state) {
         if (state is RegisterLoading) {
         } else if (state is RegisterSuccess) {
-          AppSnackBar.showSuccess(message: state.message, context: context);
+          CustomAnimatedShowSnackBar.successSnackBar(
+            message: state.message,
+            context: context,
+          );
         } else if (state is RegisterError) {
-          AppSnackBar.showError(message: state.message, context: context);
+          CustomAnimatedShowSnackBar.failureSnackBar(
+            message: state.message,
+            context: context,
+          );
         }
       },
       builder: (context, state) {

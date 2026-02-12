@@ -2,7 +2,7 @@ import 'package:accessories_store/Features/auth/login/presentation/manager/login
 import 'package:accessories_store/Features/auth/login/presentation/view/widgets/donot_have_account.dart';
 import 'package:accessories_store/Features/auth/login/presentation/view/widgets/login_with_google.dart';
 import 'package:accessories_store/Features/auth/login/presentation/view/widgets/or_widget.dart';
-import 'package:accessories_store/core/methods/app_snack_bar.dart';
+import 'package:accessories_store/core/methods/custom_animated_snack_bar.dart';
 import 'package:accessories_store/core/services/input_validator.dart';
 import 'package:accessories_store/core/shared_widgets/custom_button_widget.dart';
 import 'package:accessories_store/core/shared_widgets/custom_loading_widget.dart';
@@ -35,7 +35,6 @@ class _LoginViewBodyState extends State<LoginViewBody> {
 
   @override
   void dispose() {
-    emailController.dispose();
     passwordController.dispose();
     super.dispose();
   }
@@ -45,17 +44,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
-          AppSnackBar.showSuccess(
+          CustomAnimatedShowSnackBar.successSnackBar(
             message: LocaleKeys.loginSuccessful.tr(),
             context: context,
-            position: SnackBarPosition.bottom,
           );
         } else if (state is LoginError) {
-          AppSnackBar.showError(
-            title: LocaleKeys.loginFailed.tr(),
+          CustomAnimatedShowSnackBar.failureSnackBar(
             message: state.message,
             context: context,
-            position: SnackBarPosition.bottom,
           );
         } else {}
       },
