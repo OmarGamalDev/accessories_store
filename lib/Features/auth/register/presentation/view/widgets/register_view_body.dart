@@ -4,6 +4,7 @@ import 'package:accessories_store/Features/auth/register/presentation/view/widge
 import 'package:accessories_store/core/methods/app_snack_bar.dart';
 import 'package:accessories_store/core/services/input_validator.dart';
 import 'package:accessories_store/core/shared_widgets/custom_button_widget.dart';
+import 'package:accessories_store/core/shared_widgets/custom_loading_widget.dart';
 import 'package:accessories_store/core/shared_widgets/custom_spacing_widget.dart';
 import 'package:accessories_store/core/shared_widgets/custom_text_field_widget.dart';
 import 'package:accessories_store/core/utils/app_colors.dart';
@@ -23,7 +24,8 @@ class RegisterViewBody extends StatefulWidget {
 
 class _RegisterViewBodyState extends State<RegisterViewBody> {
   final formKey = GlobalKey<FormState>();
-  final nameController = TextEditingController();
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -33,7 +35,8 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
 
   @override
   void dispose() {
-    nameController.dispose();
+    firstNameController.dispose();
+    lastNameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
@@ -45,10 +48,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
       listener: (context, state) {
         if (state is RegisterLoading) {
         } else if (state is RegisterSuccess) {
-          AppSnackBar.showSuccess(
-            message: LocaleKeys.registrationSuccessful.tr(),
-            context: context,
-          );
+          AppSnackBar.showSuccess(message: state.message, context: context);
         } else if (state is RegisterError) {
           AppSnackBar.showError(message: state.message, context: context);
         }
@@ -70,12 +70,15 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                     ),
                     const CustomHeightSpacingWidget(height: 24),
                     CustomTextFieldWidget(
-                      controller: nameController,
-                      hintText: LocaleKeys.fullName.tr(),
-                      fillColor: AppColors.textFieldColor,
-                      hintTextStyle: AppTextStyle.greyW600S13,
-                      prefixIcon: Icons.person_outline,
-                      prefixColor: AppColors.greyColor,
+                      controller: firstNameController,
+                      hintText: LocaleKeys.firstName.tr(),
+                      keyboardType: TextInputType.name,
+                      validator: Validators.validateName,
+                    ),
+                    const CustomHeightSpacingWidget(height: 16),
+                    CustomTextFieldWidget(
+                      controller: lastNameController,
+                      hintText: LocaleKeys.lastName.tr(),
                       keyboardType: TextInputType.name,
                       validator: Validators.validateName,
                     ),
@@ -83,10 +86,6 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                     CustomTextFieldWidget(
                       controller: emailController,
                       hintText: LocaleKeys.email.tr(),
-                      fillColor: AppColors.textFieldColor,
-                      hintTextStyle: AppTextStyle.greyW600S13,
-                      prefixIcon: Icons.email_outlined,
-                      prefixColor: AppColors.greyColor,
                       keyboardType: TextInputType.emailAddress,
                       validator: Validators.validateEmail,
                     ),
@@ -94,10 +93,6 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                     CustomTextFieldWidget(
                       controller: passwordController,
                       hintText: LocaleKeys.password.tr(),
-                      fillColor: AppColors.textFieldColor,
-                      hintTextStyle: AppTextStyle.greyW600S13,
-                      prefixIcon: Icons.lock_outline,
-                      prefixColor: AppColors.greyColor,
                       obscureText: !isPasswordVisible,
                       suffixIcon: isPasswordVisible
                           ? Icons.visibility_outlined
@@ -123,20 +118,27 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                     CustomButtonWidget(
                       title: isLoading ? '' : LocaleKeys.createAcc.tr(),
                       titleStyle: AppTextStyle.whiteW700S16,
-                      buttonColor: AppColors.primaryColor,
+                      buttonColor: isLoading
+                          ? AppColors.borderTextFieldColor
+                          : isTermsAccepted
+                          ? AppColors.primaryColor
+                          : AppColors.greyColor,
                       buttonHeight: 54.h,
                       buttonWidth: double.infinity,
                       borderRadiusButton: 12.r,
-                      borderSideColor: AppColors.primaryColor,
+                      borderSideColor: isLoading
+                          ? AppColors.borderTextFieldColor
+                          : isTermsAccepted
+                          ? AppColors.primaryColor
+                          : AppColors.greyColor,
                       onPressed: isLoading ? null : handleRegister,
                       child: isLoading
-                          ? SizedBox(
-                              width: 24.w,
-                              height: 24.h,
-                              child: CircularProgressIndicator(
-                                color: AppColors.whiteColor,
-                                strokeWidth: 2.w,
-                              ),
+                          ? CustomLoadingWidget(
+                              color: AppColors.whiteColor,
+                              strokeAlign: -1,
+                              strokeWidth: 2,
+                              cicleHeight: 25,
+                              cicleWidth: 25,
                             )
                           : null,
                     ),
@@ -165,7 +167,8 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
       return;
     }
     context.read<RegisterCubit>().register(
-      name: nameController.text.trim(),
+      firstName: firstNameController.text.trim(),
+      lastName: lastNameController.text.trim(),
       email: emailController.text.trim(),
       password: passwordController.text,
     );

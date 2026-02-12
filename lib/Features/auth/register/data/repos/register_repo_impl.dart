@@ -1,3 +1,4 @@
+import 'package:accessories_store/Features/auth/register/data/models/register_success_model.dart';
 import 'package:accessories_store/Features/auth/register/data/repos/register_repo.dart';
 import 'package:accessories_store/core/errors/exceptions.dart';
 import 'package:accessories_store/core/network/api_constants.dart';
@@ -10,21 +11,25 @@ class RegisterRepoImpl implements RegisterRepo {
   RegisterRepoImpl(this.api);
 
   @override
-  Future<Either<ServerException, void>> register({
-    required String name,
+  Future<Either<ServerException, RegisterSuccessModel>> register({
+    required String firstName,
+    required String lastName,
     required String email,
     required String password,
   }) async {
     try {
-      await api.post(
+      final response = await api.post(
         EndPoint.register,
         data: {
-          ApiKey.name: name,
+          ApiKey.firstName: firstName,
+          ApiKey.lastName: lastName,
           ApiKey.email: email,
           ApiKey.password: password,
         },
       );
-      return const Right(null);
+
+      final successModel = RegisterSuccessModel.fromJson(response);
+      return Right(successModel);
     } on ServerException catch (e) {
       return Left(e);
     }

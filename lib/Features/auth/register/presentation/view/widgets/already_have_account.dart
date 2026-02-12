@@ -29,9 +29,7 @@ class AlreadyHaveAccountWidget extends StatelessWidget {
           ),
           child: Text(
             LocaleKeys.login.tr(),
-            style: AppTextStyle.primaryW600S16.copyWith(
-              decoration: TextDecoration.underline,
-            ),
+            style: AppTextStyle.primaryW600S16,
           ),
         ),
       ],
