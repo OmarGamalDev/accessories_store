@@ -1,9 +1,9 @@
+import 'package:accessories_store/Features/auth/new_password/data/repo/reset_password/reset_password_implementation_repo.dart';
+import 'package:accessories_store/Features/auth/new_password/presentation/cubit/reset_password/cubit/reset_password_cubit.dart';
 import 'package:accessories_store/core/network/dio_consumer.dart';
 import 'package:accessories_store/core/shared_widgets/custom_app_bar_widget.dart';
 import 'package:accessories_store/core/shared_widgets/custom_arrow_back_widget.dart';
 import 'package:accessories_store/core/utils/app_colors.dart';
-import 'package:accessories_store/features/auth/new_password/data/repo/reset_password/reset_password_implementation_repo.dart';
-import 'package:accessories_store/features/auth/new_password/presentation/cubit/reset_password/cubit/resetPassword_cubit.dart';
 import 'package:accessories_store/features/auth/new_password/presentation/view/widgets/reset_password_body.dart';
 import 'package:accessories_store/generated/locale_keys.g.dart';
 import 'package:dio/dio.dart';
