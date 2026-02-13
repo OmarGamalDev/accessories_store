@@ -1,4 +1,4 @@
-import 'package:accessories_store/features/auth/new_password/data/repo/reset_password/reset_password_repo.dart';
+import 'package:accessories_store/Features/auth/new_password/data/repo/reset_password/reset_password_repo.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 

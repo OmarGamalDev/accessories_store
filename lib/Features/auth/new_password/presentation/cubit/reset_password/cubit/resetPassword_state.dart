@@ -1,4 +1,4 @@
-part of 'resetPassword_cubit.dart';
+part of 'reset_password_cubit.dart';
 
 sealed class ResetPasswordState extends Equatable {
   const ResetPasswordState();
