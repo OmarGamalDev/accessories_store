@@ -1,5 +1,6 @@
 import 'package:accessories_store/Features/auth/login/presentation/view/login_view.dart';
 import 'package:accessories_store/Features/auth/register/presentation/view/register_view.dart';
+import 'package:accessories_store/Features/home/presentation/view/home_view.dart';
 import 'package:accessories_store/Features/main_layout/main_layout_screen.dart';
 import 'package:accessories_store/Features/onboarding/presentation/views/on_boarding_view.dart';
 import 'package:accessories_store/Features/splash/presentation/view/splash_view.dart';
@@ -142,7 +143,7 @@ class RouterGenerationConfig {
       GoRoute(
         path: AppRoutes.homeScreen,
         name: AppRoutes.homeScreen,
-        builder: (context, state) => HomeScreen(),
+        builder: (context, state) => HomeView(),
       ),
 
       /// Item Product
