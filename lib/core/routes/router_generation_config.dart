@@ -1,5 +1,6 @@
 import 'package:accessories_store/Features/auth/login/presentation/view/login_view.dart';
 import 'package:accessories_store/Features/auth/register/presentation/view/register_view.dart';
+import 'package:accessories_store/Features/home/presentation/view/home_view.dart';
 import 'package:accessories_store/Features/main_layout/main_layout_screen.dart';
 import 'package:accessories_store/Features/onboarding/presentation/views/on_boarding_view.dart';
 import 'package:accessories_store/Features/splash/presentation/view/splash_view.dart';
@@ -12,7 +13,6 @@ import 'package:accessories_store/features/best_selling/presentation/view/best_s
 import 'package:accessories_store/features/cart/presentation/view/cart_screen.dart';
 import 'package:accessories_store/features/checkout/presentation/view/checkout_screen.dart';
 import 'package:accessories_store/features/favorite/presentation/view/favorite_screen.dart';
-import 'package:accessories_store/features/home/presentation/view/home_screen.dart';
 import 'package:accessories_store/features/item_product_detail/presentation/view/item_product_detail_screen.dart';
 import 'package:accessories_store/features/my_account/presentation/view/my_account_screen.dart';
 import 'package:accessories_store/features/my_orders/presentation/view/my_orders_screen.dart';
@@ -142,7 +142,7 @@ class RouterGenerationConfig {
       GoRoute(
         path: AppRoutes.homeScreen,
         name: AppRoutes.homeScreen,
-        builder: (context, state) => HomeScreen(),
+        builder: (context, state) => HomeView(),
       ),
 
       /// Item Product
