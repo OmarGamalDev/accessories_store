@@ -19,7 +19,11 @@ class NewPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ResetPasswordCubit(resetPasswordRepo: RestPasswordImplementationRepo(apiConsumer: DioConsumer(dio: Dio()))),
+      create: (context) => ResetPasswordCubit(
+        resetPasswordRepo: RestPasswordImplementationRepo(
+          apiConsumer: DioConsumer(dio: Dio()),
+        ),
+      ),
       child: Scaffold(
         backgroundColor: AppColors.whiteColor,
         appBar: AppBar(
@@ -34,7 +38,7 @@ class NewPasswordScreen extends StatelessWidget {
           ),
         ),
         body: ResetPasswordBody(email: email, otp: otp),
-    )
+      ),
     );
   }
 }
