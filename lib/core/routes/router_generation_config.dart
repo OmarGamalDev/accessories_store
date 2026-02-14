@@ -7,6 +7,7 @@ import 'package:accessories_store/core/routes/app_routes.dart';
 import 'package:accessories_store/features/about_us/presentation/view/about_us_screen.dart';
 import 'package:accessories_store/features/auth/forgot_password/presentation/view/forgot_password_screen.dart';
 import 'package:accessories_store/features/auth/new_password/presentation/view/new_password_screen.dart';
+import 'package:accessories_store/features/auth/verify_email/presentation/view/verify_email_screen.dart';
 import 'package:accessories_store/features/auth/verify_otp/presentation/view/verify_otp_screen.dart';
 import 'package:accessories_store/features/best_selling/presentation/view/best_selling_screen.dart';
 import 'package:accessories_store/features/cart/presentation/view/cart_screen.dart';
@@ -93,6 +94,16 @@ class RouterGenerationConfig {
         builder: (context, state) {
           final String email = state.extra as String;
           return VerifyOtpScreen(email: email);
+        },
+      ),
+
+      /// verify Email
+      GoRoute(
+        path: AppRoutes.verifyEmailScreen,
+        name: AppRoutes.verifyEmailScreen,
+        builder: (context, state) {
+          final String email = state.extra as String;
+          return VerifyEmailScreen(email: email);
         },
       ),
 

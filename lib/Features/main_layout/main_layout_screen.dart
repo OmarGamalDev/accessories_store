@@ -24,14 +24,17 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: screens[currentIndex],
-      bottomNavigationBar: CustomButtomNavBar(
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
+    return PopScope(
+      canPop: false,
+      child: Scaffold(
+        body: screens[currentIndex],
+        bottomNavigationBar: CustomButtomNavBar(
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
+        ),
       ),
     );
   }

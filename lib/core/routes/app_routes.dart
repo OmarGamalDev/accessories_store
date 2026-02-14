@@ -23,4 +23,5 @@ class AppRoutes {
   static const String paymentsScreen = "/paymentsScreen";
   static const String favoriteScreen = "/favoriteScreen";
   static const String aboutUsScreen = "/aboutUsScreen";
+  static const String verifyEmailScreen = "/verifyEmailScreen";
 }
