@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-class VerifyEmailButton extends StatelessWidget {
-  const VerifyEmailButton({super.key, required this.formKey, required this.emailController});
+class ForgotPasswordButton extends StatelessWidget {
+  const ForgotPasswordButton({super.key, required this.formKey, required this.emailController});
   final GlobalKey<FormState> formKey;
   final TextEditingController emailController;
 

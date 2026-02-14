@@ -57,7 +57,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
           );
           Future.delayed(const Duration(milliseconds: 500), () {
             if (context.mounted) {
-              GoRouter.of(context).pushReplacement(AppRoutes.mainLayoutScreen);
+              GoRouter.of(context).pushNamed(AppRoutes.verifyEmailScreen,extra: emailController.text.trim());
             }
           });
         } else if (state is RegisterError) {

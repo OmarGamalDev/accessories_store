@@ -10,22 +10,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-class VerifyOtpButton extends StatefulWidget {
+class VerifyOtpButton extends StatelessWidget {
   const VerifyOtpButton({super.key, required this.email, required this.otpController, required this.formKey});
   final String email;
   final TextEditingController otpController;
   final GlobalKey<FormState> formKey;
 
-  @override
-  State<VerifyOtpButton> createState() => _VerifyOtpButtonState();
-}
-
-class _VerifyOtpButtonState extends State<VerifyOtpButton> {
-  @override
-  void dispose() {
-    widget.otpController.dispose();
-    super.dispose();
-  }
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<VerifyOtpCubit, VerifyOtpState>(
@@ -36,8 +26,8 @@ class _VerifyOtpButtonState extends State<VerifyOtpButton> {
         else if (state is VerifyOtpSuccessState) {
           CustomAnimatedShowSnackBar.successSnackBar(context: context, message: LocaleKeys.codeVerificationSuccess.tr());
           context.pushNamed(AppRoutes.newPasswordScreen,extra: {
-            "email": widget.email,
-            "otp": widget.otpController.text.trim(),
+            "email": email,
+            "otp": otpController.text.trim(),
           });
         }
       },
@@ -46,23 +36,23 @@ class _VerifyOtpButtonState extends State<VerifyOtpButton> {
   buttonWidth: double.infinity,
   title: LocaleKeys.verifyButton.tr(),
 
-  borderSideColor: widget.otpController.text.trim().length != 6 ||
+  borderSideColor: otpController.text.trim().length != 6 ||
           state is VerifyOtpLoadingState
       ? AppColors.borderTextFieldColor
       : AppColors.primaryColor,
 
-  buttonColor: widget.otpController.text.trim().length != 6 ||
+  buttonColor: otpController.text.trim().length != 6 ||
           state is VerifyOtpLoadingState
       ? AppColors.borderTextFieldColor
       : AppColors.primaryColor,
 
-  onPressed: widget.otpController.text.trim().length == 6 &&
+  onPressed: otpController.text.trim().length == 6 &&
           state is! VerifyOtpLoadingState
       ? () {
-          if (widget.formKey.currentState!.validate()) {
+          if (formKey.currentState!.validate()) {
             context.read<VerifyOtpCubit>().verifyOtp(
-                  email: widget.email,
-                  otp: widget.otpController.text.trim(),
+                  email: email,
+                  otp: otpController.text.trim(),
                 );
           }
         }
