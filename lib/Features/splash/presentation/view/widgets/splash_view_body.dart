@@ -1,6 +1,6 @@
 import 'package:accessories_store/core/routes/app_routes.dart';
 import 'package:accessories_store/core/services/cache/cache_helper.dart';
-import 'package:accessories_store/core/utils/app_images.dart';
+import 'package:accessories_store/generated/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';

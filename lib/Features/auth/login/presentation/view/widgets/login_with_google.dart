@@ -1,7 +1,7 @@
 import 'package:accessories_store/core/shared_widgets/custom_spacing_widget.dart';
 import 'package:accessories_store/core/utils/app_colors.dart';
-import 'package:accessories_store/core/utils/app_images.dart';
 import 'package:accessories_store/core/utils/app_text_style.dart';
+import 'package:accessories_store/generated/app_images.dart';
 import 'package:accessories_store/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -50,16 +50,12 @@ class _LoginWithGoogleState extends State<LoginWithGoogle> {
         decoration: BoxDecoration(
           color: AppColors.whiteColor,
           borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(color: AppColors.greyColor),
-          boxShadow: isPressed
-              ? []
-              : [
-                  BoxShadow(
-                    color: AppColors.greyColor.withValues(alpha: 0.1),
-                    blurRadius: 2,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
+          border: Border.all(
+            color: isPressed
+                ? AppColors.greyColor.withValues(alpha: 0.8)
+                : AppColors.greyColor,
+            width: 1.5.w,
+          ),
         ),
         child: Transform.scale(
           scale: isPressed ? 0.98 : 1.0,
