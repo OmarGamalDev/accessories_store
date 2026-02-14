@@ -20,7 +20,7 @@ class AlreadyHaveAccountWidget extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            GoRouter.of(context).go(AppRoutes.loginScreen);
+            GoRouter.of(context).push(AppRoutes.loginScreen);
           },
           style: TextButton.styleFrom(
             padding: EdgeInsets.symmetric(horizontal: 4.w),

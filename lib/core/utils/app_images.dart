@@ -4,8 +4,6 @@ class Assets {
   
   static const String imagesPngAccessoriesStoreLogo = "assets/images/png/accessories_store_logo.png";
 
-  static const String imagesPngProfileImage = "assets/images/png/profile_image.png";
-
   static const String imagesPngSplashDark = "assets/images/png/splash_dark.png";
 
   static const String imagesPngSplashLight = "assets/images/png/splash_light.png";
@@ -21,8 +19,6 @@ class Assets {
   static const String imagesSvgHomeFilled = "assets/images/svg/home_filled.svg";
 
   static const String imagesSvgIconNext = "assets/images/svg/icon_next.svg";
-
-  static const String imagesSvgNotification = "assets/images/svg/notification.svg";
 
   static const String imagesSvgOrderAccept = "assets/images/svg/order_accept.svg";
 

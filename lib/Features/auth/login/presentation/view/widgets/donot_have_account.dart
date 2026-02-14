@@ -17,7 +17,7 @@ class DonotHaveAccount extends StatelessWidget {
         Text(LocaleKeys.dontHaveAccount1.tr(), style: AppTextStyle.greyW600S16),
         TextButton(
           onPressed: () {
-            GoRouter.of(context).go(AppRoutes.registerScreen);
+            GoRouter.of(context).push(AppRoutes.registerScreen);
           },
           style: TextButton.styleFrom(
             padding: EdgeInsets.symmetric(horizontal: 4.w),
