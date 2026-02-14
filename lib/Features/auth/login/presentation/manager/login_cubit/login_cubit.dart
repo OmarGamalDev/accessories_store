@@ -1,4 +1,3 @@
-import 'package:accessories_store/Features/auth/login/data/models/login_success_model.dart';
 import 'package:accessories_store/Features/auth/login/data/repos/login_repo.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,7 +18,7 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginError(message: failure.errModel.errorMessage));
       },
       (success) {
-        emit(LoginSuccess(loginSuccessModel: success));
+        emit(LoginSuccess());
       },
     );
   }
@@ -34,7 +33,7 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginError(message: failure.errModel.errorMessage));
       },
       (success) {
-        emit(LoginSuccess(loginSuccessModel: success));
+        emit(LoginSuccess());
       },
     );
   }

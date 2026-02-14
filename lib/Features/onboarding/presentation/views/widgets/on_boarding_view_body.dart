@@ -3,7 +3,7 @@ import 'package:accessories_store/core/routes/app_routes.dart';
 import 'package:accessories_store/core/services/cache/cache_helper.dart';
 import 'package:accessories_store/core/shared_widgets/custom_button_widget.dart';
 import 'package:accessories_store/core/utils/app_colors.dart';
-import 'package:accessories_store/generated/app_images.dart';
+import 'package:accessories_store/core/utils/app_images.dart';
 import 'package:accessories_store/core/utils/app_text_style.dart';
 import 'package:accessories_store/generated/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
