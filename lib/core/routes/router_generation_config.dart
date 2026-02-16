@@ -31,7 +31,7 @@ import '../utils/app_colors.dart';
 
 class RouterGenerationConfig {
   static GoRouter routerConfig = GoRouter(
-    initialLocation: AppRoutes.splashScreen,
+    initialLocation: AppRoutes.mainLayoutScreen,
     errorBuilder: (context, state) {
       return errorBuilder();
     },

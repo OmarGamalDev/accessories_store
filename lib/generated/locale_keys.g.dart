@@ -58,6 +58,7 @@ abstract class  LocaleKeys {
   static const cart = 'cart';
   static const profile = 'profile';
   static const search = 'search';
+  static const searchAbout = 'searchAbout';
   static const searchRes = 'searchRes';
   static const lastSearch = 'lastSearch';
   static const noSearch = 'noSearch';
@@ -156,6 +157,7 @@ abstract class  LocaleKeys {
   static const otpRequired = 'otpRequired';
   static const otpInvalid = 'otpInvalid';
   static const otpLength = 'otpLength';
+  static const bestSells = 'bestSells';
   static const googleLoginCancelled = 'googleLoginCancelled';
   static const googleLoginUnauthorized = 'googleLoginUnauthorized';
   static const authenticationFailed = 'authenticationFailed';

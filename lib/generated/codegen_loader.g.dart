@@ -70,6 +70,7 @@ class CodegenLoader extends AssetLoader{
   "cart": "السلة",
   "profile": "حسابي",
   "search": "بحث",
+  "searchAbout":"ابحث عن",
   "searchRes": "نتايج البحث",
   "lastSearch": "آخر حاجة دورت عليه",
   "noSearch": "مافيش نتايج",
@@ -168,6 +169,7 @@ class CodegenLoader extends AssetLoader{
   "otpRequired": "OTP مطلوب",
   "otpInvalid": "أدخل OTP صالح (6 أرقام)",
   "otpLength": "يجب أن يكون OTP 6 أرقام",
+  "bestSells": "الأكثر مبيعًا",
   "googleLoginCancelled": "تم إلغاء تسجيل الدخول بواسطة Google",
   "googleLoginUnauthorized": "فشل تسجيل الدخول بـ Google. حاول مرة أخرى أو استخدم البريد الإلكتروني.",
   "authenticationFailed": "فشلت المصادقة. يرجى المحاولة مرة أخرى."
@@ -228,6 +230,7 @@ static const Map<String,dynamic> _en = {
   "cart": "Cart",
   "profile": "Profile",
   "search": "Search",
+  "searchAbout":"Search About",
   "searchRes": "Search Results",
   "lastSearch": "Last Search",
   "noSearch": "No Search Results",
@@ -326,6 +329,7 @@ static const Map<String,dynamic> _en = {
   "otpRequired": "OTP is required",
   "otpInvalid": "Enter a valid OTP (6 digits)",
   "otpLength": "OTP must be 6 digits",
+  "bestSells": "Best Sells",
   "googleLoginCancelled": "Google login was cancelled",
   "googleLoginUnauthorized": "Google authentication failed. Please try again or use email login.",
   "authenticationFailed": "Authentication failed. Please try again."

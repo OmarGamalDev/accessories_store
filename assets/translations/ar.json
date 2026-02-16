@@ -54,6 +54,7 @@
   "cart": "السلة",
   "profile": "حسابي",
   "search": "بحث",
+  "searchAbout" : "ابحث عن",
   "searchRes": "نتايج البحث",
   "lastSearch": "آخر حاجة دورت عليه",
   "noSearch": "مافيش نتايج",
@@ -152,6 +153,7 @@
   "otpRequired": "OTP مطلوب",
   "otpInvalid": "أدخل OTP صالح (6 أرقام)",
   "otpLength": "يجب أن يكون OTP 6 أرقام",
+  "bestSells": "الأكثر مبيعًا"
   "googleLoginCancelled": "تم إلغاء تسجيل الدخول بواسطة Google",
   "googleLoginUnauthorized": "فشل تسجيل الدخول بـ Google. حاول مرة أخرى أو استخدم البريد الإلكتروني.",
   "authenticationFailed": "فشلت المصادقة. يرجى المحاولة مرة أخرى."
