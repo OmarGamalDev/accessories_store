@@ -8,5 +8,7 @@ abstract class LoginRepo {
     required String password,
   });
 
-  Future<Either<ServerException, LoginSuccessModel>> loginWithGoogle();
+  Future<Either<ServerException, LoginSuccessModel>> loginWithGoogle({
+    required String idToken,
+  });
 }

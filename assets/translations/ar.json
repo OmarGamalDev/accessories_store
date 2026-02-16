@@ -132,9 +132,9 @@
   "info": "معلومه!",
   "reload": "إعادة تحميل",
   "get_started": "ابدأ",
-  "clickToResend":"انقر لاعادة الارسال",
-  "second":"ث",
-  "resetPassword":"تعيين كلمة المرور",
+  "clickToResend": "انقر لاعادة الارسال",
+  "second": "ث",
+  "resetPassword": "تعيين كلمة المرور",
   "emailRequired": "البريد الإلكتروني مطلوب",
   "emailInvalid": "أدخل بريدًا إلكترونيًا صالحًا (مثل: user@example.com)",
   "passwordRequired": "كلمة المرور مطلوبة",
@@ -151,5 +151,8 @@
   "phoneInvalid": "أدخل رقم هاتف صالح (10-15 رقم)",
   "otpRequired": "OTP مطلوب",
   "otpInvalid": "أدخل OTP صالح (6 أرقام)",
-  "otpLength": "يجب أن يكون OTP 6 أرقام"
+  "otpLength": "يجب أن يكون OTP 6 أرقام",
+  "googleLoginCancelled": "تم إلغاء تسجيل الدخول بواسطة Google",
+  "googleLoginUnauthorized": "فشل تسجيل الدخول بـ Google. حاول مرة أخرى أو استخدم البريد الإلكتروني.",
+  "authenticationFailed": "فشلت المصادقة. يرجى المحاولة مرة أخرى."
 }

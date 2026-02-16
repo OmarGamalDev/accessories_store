@@ -37,9 +37,14 @@ class LoginRepoImpl implements LoginRepo {
   }
 
   @override
-  Future<Either<ServerException, LoginSuccessModel>> loginWithGoogle() async {
+  Future<Either<ServerException, LoginSuccessModel>> loginWithGoogle({
+    required String idToken,
+  }) async {
     try {
-      final response = await api.post(EndPoint.loginWithGoogle);
+      final response = await api.post(
+        EndPoint.loginWithGoogle,
+        data: {ApiKey.idToken: idToken},
+      );
 
       final loginSuccess = LoginSuccessModel.fromJson(response);
 
@@ -48,7 +53,6 @@ class LoginRepoImpl implements LoginRepo {
         refreshToken: loginSuccess.refreshToken,
         expiresAt: loginSuccess.expiresAtUtc,
       );
-
       return Right(loginSuccess);
     } on ServerException catch (e) {
       return Left(e);

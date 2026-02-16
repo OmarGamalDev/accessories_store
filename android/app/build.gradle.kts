@@ -7,7 +7,7 @@ plugins {
 
 
 android {
-    namespace = "com.example.shopping_app"
+    namespace = "com.example.shopping_app"  // Must match MainActivity package
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -22,17 +22,20 @@ android {
 
     defaultConfig {
         applicationId = "com.example.shopping_app"
-        minSdk = flutter.minSdkVersion
+        minSdk = flutter.minSdkVersion  // Required for google_sign_in and other modern packages
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        multiDexEnabled = true
     }
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
+        }
+        debug {
+            // Debug build type - no minification
         }
     }
 }

@@ -167,7 +167,10 @@ class CodegenLoader extends AssetLoader{
   "phoneInvalid": "أدخل رقم هاتف صالح (10-15 رقم)",
   "otpRequired": "OTP مطلوب",
   "otpInvalid": "أدخل OTP صالح (6 أرقام)",
-  "otpLength": "يجب أن يكون OTP 6 أرقام"
+  "otpLength": "يجب أن يكون OTP 6 أرقام",
+  "googleLoginCancelled": "تم إلغاء تسجيل الدخول بواسطة Google",
+  "googleLoginUnauthorized": "فشل تسجيل الدخول بـ Google. حاول مرة أخرى أو استخدم البريد الإلكتروني.",
+  "authenticationFailed": "فشلت المصادقة. يرجى المحاولة مرة أخرى."
 };
 static const Map<String,dynamic> _en = {
   "appName": "AccessoriesStore",
@@ -322,7 +325,10 @@ static const Map<String,dynamic> _en = {
   "phoneInvalid": "Enter a valid phone number (10-15 digits)",
   "otpRequired": "OTP is required",
   "otpInvalid": "Enter a valid OTP (6 digits)",
-  "otpLength": "OTP must be 6 digits"
+  "otpLength": "OTP must be 6 digits",
+  "googleLoginCancelled": "Google login was cancelled",
+  "googleLoginUnauthorized": "Google authentication failed. Please try again or use email login.",
+  "authenticationFailed": "Authentication failed. Please try again."
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};
 }
