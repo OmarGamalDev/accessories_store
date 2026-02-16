@@ -32,6 +32,7 @@ dependencies:
   salomon_bottom_bar: ^3.3.2
   flutter_secure_storage: ^10.0.0
   jwt_decoder: ^2.0.1
+  google_sign_in: ^7.2.0
 
 dev_dependencies:
   flutter_test:

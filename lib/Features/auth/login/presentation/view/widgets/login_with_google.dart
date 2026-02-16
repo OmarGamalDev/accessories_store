@@ -42,7 +42,9 @@ class _LoginWithGoogleState extends State<LoginWithGoogle> {
       onTapDown: onTapDown,
       onTapUp: onTapUp,
       onTapCancel: onTapCancel,
-      onTap: () {},
+      onTap: () {
+        
+      },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 150),
         height: 56.h,
