@@ -21,6 +21,7 @@ class CacheHelper {
   }
 
   // ============= String Methods =============
+
   static Future<bool> setString(String key, String value) async {
     return await _prefs.setString(key, value);
   }

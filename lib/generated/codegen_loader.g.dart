@@ -70,6 +70,7 @@ class CodegenLoader extends AssetLoader{
   "cart": "السلة",
   "profile": "حسابي",
   "search": "بحث",
+  "searchAbout":"ابحث عن",
   "searchRes": "نتايج البحث",
   "lastSearch": "آخر حاجة دورت عليه",
   "noSearch": "مافيش نتايج",
@@ -167,7 +168,8 @@ class CodegenLoader extends AssetLoader{
   "phoneInvalid": "أدخل رقم هاتف صالح (10-15 رقم)",
   "otpRequired": "OTP مطلوب",
   "otpInvalid": "أدخل OTP صالح (6 أرقام)",
-  "otpLength": "يجب أن يكون OTP 6 أرقام"
+  "otpLength": "يجب أن يكون OTP 6 أرقام",
+  "bestSells": "الأكثر مبيعًا",
 };
 static const Map<String,dynamic> _en = {
   "appName": "AccessoriesStore",
@@ -225,6 +227,7 @@ static const Map<String,dynamic> _en = {
   "cart": "Cart",
   "profile": "Profile",
   "search": "Search",
+  "searchAbout":"Search About",
   "searchRes": "Search Results",
   "lastSearch": "Last Search",
   "noSearch": "No Search Results",
@@ -322,7 +325,8 @@ static const Map<String,dynamic> _en = {
   "phoneInvalid": "Enter a valid phone number (10-15 digits)",
   "otpRequired": "OTP is required",
   "otpInvalid": "Enter a valid OTP (6 digits)",
-  "otpLength": "OTP must be 6 digits"
+  "otpLength": "OTP must be 6 digits",
+  "bestSells": "Best Sells",
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};
 }

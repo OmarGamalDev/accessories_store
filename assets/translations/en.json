@@ -54,6 +54,7 @@
   "cart": "Cart",
   "profile": "Profile",
   "search": "Search",
+  "searchAbout":"Search About",
   "searchRes": "Search Results",
   "lastSearch": "Last Search",
   "noSearch": "No Search Results",
@@ -151,5 +152,6 @@
   "phoneInvalid": "Enter a valid phone number (10-15 digits)",
   "otpRequired": "OTP is required",
   "otpInvalid": "Enter a valid OTP (6 digits)",
-  "otpLength": "OTP must be 6 digits"
+  "otpLength": "OTP must be 6 digits",
+  "bestSells":"Best Sells"
 }

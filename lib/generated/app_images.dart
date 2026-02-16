@@ -45,5 +45,11 @@ class Assets {
   static const String imagesSvgUser = "assets/images/svg/user.svg";
 
   static const String imagesSvgUserFilled = "assets/images/svg/user_filled.svg";
+
+  static const String imagesSvgSetting = "assets/images/svg/setting.svg";
+
+  static const String imagesPnvBanner = "assets/images/png/banner.png";
+
+  static const String imagesPnvFrawalla = "assets/images/png/frawalla.png";
 }
 
