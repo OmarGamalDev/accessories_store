@@ -43,7 +43,7 @@ class _LoginWithGoogleState extends State<LoginWithGoogle> {
   Widget build(BuildContext context) {
     return BlocBuilder<LoginCubit, LoginState>(
       builder: (context, state) {
-        final isLoading = state is LoginLoading;
+        final isLoading = state is GoogleLoginLoading;
         return GestureDetector(
           onTapDown: isLoading ? null : onTapDown,
           onTapUp: isLoading ? null : onTapUp,

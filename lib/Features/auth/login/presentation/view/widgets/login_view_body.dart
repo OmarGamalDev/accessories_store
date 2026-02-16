@@ -45,7 +45,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
-        if (state is LoginSuccess) {
+        if (state is LoginSuccess || state is GoogleLoginSuccess) {
           CustomAnimatedShowSnackBar.successSnackBar(
             message: LocaleKeys.loginSuccessful.tr(),
             context: context,
@@ -55,9 +55,12 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               GoRouter.of(context).pushReplacement(AppRoutes.mainLayoutScreen);
             }
           });
-        } else if (state is LoginError) {
+        } else if (state is LoginError || state is GoogleLoginError) {
+          final message = state is LoginError
+              ? state.message
+              : (state as GoogleLoginError).message;
           CustomAnimatedShowSnackBar.failureSnackBar(
-            message: state.message,
+            message: message,
             context: context,
           );
         }

@@ -26,22 +26,22 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   Future<void> loginWithGoogle() async {
-    emit(LoginLoading());
+    emit(GoogleLoginLoading());
     final googleService = GoogleAuthService();
     final idToken = await googleService.signIn();
 
     if (idToken == null) {
-      emit(const LoginError(message: 'Google login was cancelled'));
+      emit(const GoogleLoginError(message: 'Google login was cancelled'));
       return;
     }
 
     final result = await loginRepo.loginWithGoogle(idToken: idToken);
     result.fold(
       (failure) {
-        emit(LoginError(message: failure.errModel.errorMessage));
+        emit(GoogleLoginError(message: failure.errModel.errorMessage));
       },
       (success) {
-        emit(LoginSuccess(loginSuccessModel: success));
+        emit(GoogleLoginSuccess(loginSuccessModel: success));
       },
     );
   }
