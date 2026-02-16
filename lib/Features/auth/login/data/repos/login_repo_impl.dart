@@ -3,6 +3,7 @@ import 'package:accessories_store/Features/auth/login/data/repos/login_repo.dart
 import 'package:accessories_store/core/errors/exceptions.dart';
 import 'package:accessories_store/core/network/api_constants.dart';
 import 'package:accessories_store/core/network/api_consumer.dart';
+import 'package:accessories_store/core/services/cache/cache_helper.dart';
 import 'package:accessories_store/core/services/cache/secure_storage_helper.dart';
 import 'package:dartz/dartz.dart';
 
@@ -24,11 +25,15 @@ class LoginRepoImpl implements LoginRepo {
 
       final loginSuccess = LoginSuccessModel.fromJson(response);
 
+      // Save tokens securely
       await SecureStorageHelper().saveTokens(
         accessToken: loginSuccess.accessToken,
         refreshToken: loginSuccess.refreshToken,
         expiresAt: loginSuccess.expiresAtUtc,
       );
+
+      // Save login state
+      await CacheHelper.setBool(CacheHelper.kIsLoggedIn, true);
 
       return Right(loginSuccess);
     } on ServerException catch (e) {
@@ -37,17 +42,26 @@ class LoginRepoImpl implements LoginRepo {
   }
 
   @override
-  Future<Either<ServerException, LoginSuccessModel>> loginWithGoogle() async {
+  Future<Either<ServerException, LoginSuccessModel>> loginWithGoogle({
+    required String idToken,
+  }) async {
     try {
-      final response = await api.post(EndPoint.loginWithGoogle);
+      final response = await api.post(
+        EndPoint.loginWithGoogle,
+        data: {ApiKey.idToken: idToken},
+      );
 
       final loginSuccess = LoginSuccessModel.fromJson(response);
 
+      // Save tokens securely
       await SecureStorageHelper().saveTokens(
         accessToken: loginSuccess.accessToken,
         refreshToken: loginSuccess.refreshToken,
         expiresAt: loginSuccess.expiresAtUtc,
       );
+
+      // Save login state
+      await CacheHelper.setBool(CacheHelper.kIsLoggedIn, true);
 
       return Right(loginSuccess);
     } on ServerException catch (e) {

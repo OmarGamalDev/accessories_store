@@ -133,9 +133,9 @@
   "info": "Info!",
   "reload": "Reload",
   "get_started": "Get Started",
-  "clickToResend":"Click to resend",
-  "second":"s",
-  "resetPassword":"Reset Password",
+  "clickToResend": "Click to resend",
+  "second": "s",
+  "resetPassword": "Reset Password",
   "emailRequired": "Email is required",
   "emailInvalid": "Enter a valid email (e.g., user@example.com)",
   "passwordRequired": "Password is required",
@@ -154,4 +154,7 @@
   "otpInvalid": "Enter a valid OTP (6 digits)",
   "otpLength": "OTP must be 6 digits",
   "bestSells":"Best Sells"
+  "googleLoginCancelled": "Google login was cancelled",
+  "googleLoginUnauthorized": "Google authentication failed. Please try again or use email login.",
+  "authenticationFailed": "Authentication failed. Please try again."
 }

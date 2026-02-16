@@ -158,5 +158,8 @@ abstract class  LocaleKeys {
   static const otpInvalid = 'otpInvalid';
   static const otpLength = 'otpLength';
   static const bestSells = 'bestSells';
+  static const googleLoginCancelled = 'googleLoginCancelled';
+  static const googleLoginUnauthorized = 'googleLoginUnauthorized';
+  static const authenticationFailed = 'authenticationFailed';
 
 }

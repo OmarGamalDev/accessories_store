@@ -101,9 +101,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
       if (isOnBoardingCompleted) {
         final bool isLoggedIn = CacheHelper.isLoggedIn;
         if (isLoggedIn) {
-          GoRouter.of(context).pushReplacement(AppRoutes.homeScreen);
+          GoRouter.of(context).pushReplacement(AppRoutes.mainLayoutScreen);
         } else {
-          GoRouter.of(context).pushReplacement(AppRoutes.registerScreen);
+          GoRouter.of(context).pushReplacement(AppRoutes.loginScreen);
         }
       } else {
         GoRouter.of(context).pushReplacement(AppRoutes.onboardingScreen);

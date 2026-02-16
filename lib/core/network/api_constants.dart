@@ -7,7 +7,7 @@ class EndPoint {
   static String login = "api/auth/login";
   static String refreshToken = "api/auth/refresh-token";
   static String forgotPassword = "api/auth/forgot-password";
-  static String loginWithGoogle = "api/auth/google/login";
+  static String loginWithGoogle = "api/auth/google/mobile";
   static String resendOtp = "api/auth/resend-otp";
   static String resetPassword = "api/auth/reset-password";
 }
@@ -27,6 +27,7 @@ class ApiKey {
   static const String name = "name";
   static const String confirmPassword = "confirmPassword";
   static const String location = "location";
+  static const String idToken = "idToken";
 
   /// Authentication token prefix for Bearer-style authentication
   static const String tokenPrefix = "FOODAPI";
