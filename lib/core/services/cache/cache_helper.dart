@@ -1,3 +1,4 @@
+import 'package:accessories_store/core/services/cache/secure_storage_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
@@ -114,12 +115,22 @@ class CacheHelper {
   /// Check if onboarding is completed
   static bool get isOnBoardingCompleted => getBool(kIsOnBoardingViewSeen);
 
-  /// Clear user session
-  static Future<void> clearUserSession() async {
+  /// Clear user session (both SharedPreferences and SecureStorage)
+  static Future<void> logout() async {
+    // Clear tokens from SecureStorage
+    await SecureStorageHelper().clearTokens();
+
+    // Clear user data from SharedPreferences
     await remove(kToken);
     await remove(kUserId);
     await remove(kUserName);
     await remove(kUserEmail);
     await setBool(kIsLoggedIn, false);
+  }
+
+  /// Clear user session (deprecated - use logout() instead)
+  @Deprecated('Use logout() instead')
+  static Future<void> clearUserSession() async {
+    await logout();
   }
 }
